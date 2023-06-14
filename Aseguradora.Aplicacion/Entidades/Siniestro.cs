@@ -9,5 +9,6 @@ public class Siniestro
     public string? Direccion {get;set;}
     public string? Descripcion {get;set;}
     
+    public List<Tercero>? Terceros {get;set;}
 
 }
