@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+
+using Aseguradora.Repositorios;
+
 using Aseguradora.UI.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +20,9 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
+
+var bd = new CrearBD();
+bd.Ejecutar();
 
 
 app.UseStaticFiles();

@@ -13,43 +13,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 955953236,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Counter",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Counter",
-          "Common.TypeNameIdentifier": "Counter",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 1766819729,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Counter",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Aseguradora.UI.Pages.Counter"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Counter",
-          "Common.TypeNameIdentifier": "Counter",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
         "HashCode": -2038388054,
         "Kind": "Components.Component",
         "Name": "Aseguradora.UI.Pages.FetchData",
@@ -124,38 +87,38 @@
         }
       },
       {
-        "HashCode": 604502809,
+        "HashCode": 955953236,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.App",
+        "Name": "Aseguradora.UI.Pages.Counter",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "Counter"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.App",
-          "Common.TypeNameIdentifier": "App",
-          "Common.TypeNamespace": "Aseguradora.UI",
+          "Common.TypeName": "Aseguradora.UI.Pages.Counter",
+          "Common.TypeNameIdentifier": "Counter",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": -670183544,
+        "HashCode": 1766819729,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.App",
+        "Name": "Aseguradora.UI.Pages.Counter",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Aseguradora.UI.App"
+            "TagName": "Aseguradora.UI.Pages.Counter"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.App",
-          "Common.TypeNameIdentifier": "App",
-          "Common.TypeNamespace": "Aseguradora.UI",
+          "Common.TypeName": "Aseguradora.UI.Pages.Counter",
+          "Common.TypeNameIdentifier": "Counter",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
         }
@@ -358,6 +321,43 @@
           "Common.TypeName": "Aseguradora.UI.Shared.NavMenu",
           "Common.TypeNameIdentifier": "NavMenu",
           "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 604502809,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.App",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.App",
+          "Common.TypeNameIdentifier": "App",
+          "Common.TypeNamespace": "Aseguradora.UI",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -670183544,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.App",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Aseguradora.UI.App"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.App",
+          "Common.TypeNameIdentifier": "App",
+          "Common.TypeNamespace": "Aseguradora.UI",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
         }

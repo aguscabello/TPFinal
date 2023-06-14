@@ -1,19 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using Aseguradora.Aplicacion.Entidades;
 
-namespace Aseguradora.Repositorios;
+namespace Aseguradora.Repositorios.Context;
 public class AseguradoraContext : DbContext
 {
-
-
 
     #nullable disable
     public DbSet<Titular> Titulares { get; set; }
 
-     #nullable restore
+    #nullable restore
     protected override void OnConfiguring(DbContextOptionsBuilder
     optionsBuilder)
     {
-        optionsBuilder.UseSqlite("data source=Escuela.sqlite");
+        optionsBuilder.UseSqlite("data source=Aseguradora.sqlite");
     }
 }
