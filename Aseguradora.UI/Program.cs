@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
 using Aseguradora.Repositorios;
+using Aseguradora.Aplicacion.UseCases;
 
 using Aseguradora.UI.Data;
 
@@ -20,6 +21,9 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
+
+
+builder.Services.AddTransient<AgregarTitularUseCase>();
 
 
 var bd = new CrearBD();
