@@ -1,10 +1,39 @@
 @page "/Titulares"
+@inject NavigationManager Navegador;
+@inject AgregarTitularUseCase AgregarTitularUseCase
 
 <PageTitle>Titulares</PageTitle>
 
-<h1>Hola @nombre</h1>
+<h1> Titulares </h1>
+
+<span>Agregar Titular</span>
+
+<div>
+    <input type="text"      placeholder="Nombre"       @bind="t.Nombre" style="max-width: 10%;" />
+    <input type="text"      placeholder="Apellido"       @bind="t.Apellido" style="max-width: 10%;" />
+    <input type="number"    placeholder="Dni"        @bind="t.Dni" style="max-width: 10%;" />    
+    <input type="number"    placeholder="Telefono"   @bind="t.Telefono" style="max-width: 10%;" />
+    <input type="text"      placeholder="Direccion"    @bind="t.Direccion" style="max-width: 10%;" />
+    <input type="text"      placeholder="Correo"       @bind="t.Correo" style="max-width: 10%;" />
+    <button @onclick="Agregar">Agregar</button>    
+</div>
+
+
 
 @code 
 {
-    string nombre = "juan";
+ Titular t = new Titular();
+
+ void Agregar()
+ {
+    if (t.Nombre != null && t.Apellido != null && t.Dni != null && t.Telefono != null && t.Direccion != null && t.Correo != null )
+    {
+        AgregarTitularUseCase.Ejecutar(t);
+        Console.WriteLine("lo mando");
+        Navegador.NavigateTo("/titulares");
+    }
+    //else
+        //cartel para completar datos
+ }
+
 }
