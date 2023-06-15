@@ -32,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Pages/Titulares.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGl0dWxhcmVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

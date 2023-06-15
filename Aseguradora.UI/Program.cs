@@ -21,8 +21,9 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
 }
 
+
 var bd = new CrearBD();
-bd.Ejecutar();
+bd.Inicializar();
 
 
 app.UseStaticFiles();
