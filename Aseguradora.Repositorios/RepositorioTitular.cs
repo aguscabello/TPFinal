@@ -27,7 +27,20 @@ public class RepositorioTitular : IRepositorioTitular
         }     
         
     }
-    public void ModificarTitular(Titular titular){}
+    public void ModificarTitular(Titular titular)
+    {
+
+    }
+
+    public Titular ObtenerTitular(int id)
+    {
+        using (var context = new AseguradoraContext())
+        {
+            Titular t = context.Titulares.First(t => t.Id == id);
+            return t;
+        }
+       
+    }
     public void EliminarTitular(int id)
     {
         using (var context = new AseguradoraContext())
@@ -35,10 +48,11 @@ public class RepositorioTitular : IRepositorioTitular
             if (context.Titulares.First(t => t.Id == id) != null)
             {                
                 Titular t = context.Titulares.First(t => t.Id == id);
-                Console.WriteLine(t.Id);
                 context.Remove(t);
                 context.SaveChanges();
            }
+
+           ///ELIMINAR EN CASCADA
 
             
         }

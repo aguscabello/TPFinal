@@ -1,8 +1,11 @@
 @page "/Titulares"
 @inject NavigationManager Navegador;
+@inject IJSRuntime JsRuntime;
 @inject AgregarTitularUseCase AgregarTitularUseCase
 @inject ListarTitularesUseCase ListarTitularesUseCase
 @inject EliminarTitularUseCase EliminarTitularUseCase
+
+@using Aseguradora.UI.Shared;  @*PREGUNTAR PORQUE ME TIRA EL DIALOGO WARNING*@
 
 <PageTitle>Titulares</PageTitle>
 
@@ -57,7 +60,7 @@ else
                     <td>@t.Correo</td>            
                     <td>
                         <button class="btn btn-primary">
-                            <span class="oi oi-pencil"></span>
+                            <span class="oi oi-pencil" @onclick="()=>ModificarTitular(t)"></span>
                         </button>
                         <button class="btn btn-danger" @onclick="()=>ConfirmarEliminacion(t)" >
                             <span class="oi oi-trash"></span>
@@ -69,11 +72,6 @@ else
         </tbody>
     </table>
 }
-
-
-
-
-
 
 
 @code 
@@ -90,19 +88,22 @@ else
     {
         if (t.Nombre != null && t.Apellido != null && t.Dni != null && t.Telefono != null && t.Direccion != null && t.Correo != null )
         {
-            AgregarTitularUseCase.Ejecutar(t);
-            Console.WriteLine("lo mando");
-            Navegador.NavigateTo("/titulares");
+            AgregarTitularUseCase.Ejecutar(t);            
+            titulares = ListarTitularesUseCase.Ejecutar();
         }
         //else
             //cartel para completar datos
     }
-    DialogoConfirmacion dialogo = null!;
-    
+
+    void ModificarTitular(Titular t)
+    {
+        Navegador.NavigateTo($"Titular/{t.Id}");
+    }
+    DialogoConfirmacion dialogo = null!;    
     private void ConfirmarEliminacion(Titular titular)
     {        
         dialogo.Mensaje = $"¿Desea eliminar al cliente {titular.Nombre} {titular.Apellido}?";
-        dialogo.OnConfirmado = EventCallback.Factory.Create(this, () => Eliminar(titular));
+        dialogo.OnConfirmado = EventCallback.Factory.Create(this, () => Eliminar(titular));   ///ME TIRA UN DIALOGO WARNING AUNQ ESTO ES LO QUE HACE LA TEORIA
         dialogo.Mostrar();
     }
     private void Eliminar(Titular t)

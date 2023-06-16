@@ -1,0 +1,9 @@
+0) no me deja obtener un titular por su id. algo con que el metodo no es estatico (lo copiamos de la teoria)
+
+1) Cuando agrego un titular, tengo que refrescar para agregar otro sino me carga la misma id y tira Error
+
+2) No deberia poder agregar otro titular con el mismo dni. Tengo que hacer otro usecase para preguntar si ya existe ese dni? Lo mismo con vehiculo etc. 
+
+3) al eliminar cuando le pongo el dato al dialogo me tira un warning
+
+4) para eliminar en cascada, tengo que hacer un monton de foreach dentro del eliminar use case? o hay una mejor estrategia?

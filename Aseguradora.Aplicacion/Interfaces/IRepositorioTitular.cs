@@ -6,4 +6,5 @@ public interface IRepositorioTitular
     List<Titular> ListarTitulares();
     void ModificarTitular(Titular titular);
     void EliminarTitular(int id);    
+    Titular ObtenerTitular(int id);
 }
