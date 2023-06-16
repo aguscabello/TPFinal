@@ -6,6 +6,7 @@ public interface IRepositorioVehiculo
     void EliminarVehiculo(int id);
     void ModificarVehiculo(Vehiculo vehiculo);
     List<Vehiculo> ListarVehiculos();
-    List<Vehiculo> ListarVehiculosDelTitular(int id);
+    Vehiculo? ObtenerVehiculo(string dominio);
+   
     
 }
