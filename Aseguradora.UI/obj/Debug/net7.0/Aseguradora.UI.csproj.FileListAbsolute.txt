@@ -67,3 +67,4 @@
 /home/mark/Escritorio/code/TPFinal/Aseguradora.UI/obj/Debug/net7.0/Aseguradora.UI.pdb
 /home/mark/Escritorio/code/TPFinal/Aseguradora.UI/obj/Debug/net7.0/Aseguradora.UI.genruntimeconfig.cache
 /home/mark/Escritorio/code/TPFinal/Aseguradora.UI/obj/Debug/net7.0/ref/Aseguradora.UI.dll
+/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/obj/Debug/net7.0/scopedcss/Shared/DialogoConfirmacion.razor.rz.scp.css

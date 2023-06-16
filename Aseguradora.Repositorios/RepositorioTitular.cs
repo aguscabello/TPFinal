@@ -9,7 +9,8 @@ public class RepositorioTitular : IRepositorioTitular
     {
         using (var context = new AseguradoraContext())
         {             
-            if ((context.Titulares.Where(t => t.Id == titular.Id).SingleOrDefault() == null) && (context.Titulares.Where(t => t.Dni == titular.Dni).SingleOrDefault() == null)){
+            if ((context.Titulares.Where(t => t.Id == titular.Id).SingleOrDefault() == null) && (context.Titulares.Where(t => t.Dni == titular.Dni).SingleOrDefault() == null))
+            {
                 context.Add(titular);
                 context.SaveChanges();
             }
@@ -19,9 +20,28 @@ public class RepositorioTitular : IRepositorioTitular
     }  
     public List<Titular> ListarTitulares()
     {
-        List<Titular> a = new List<Titular>(); 
-        return a;
+        using (var context = new AseguradoraContext())
+        {
+           List<Titular> a = context.Titulares.ToList();
+           return a;
+        }     
+        
     }
     public void ModificarTitular(Titular titular){}
-    public void EliminarTitular(int id){}
+    public void EliminarTitular(int id)
+    {
+        using (var context = new AseguradoraContext())
+        {                         
+            if (context.Titulares.First(t => t.Id == id) != null)
+            {                
+                Titular t = context.Titulares.First(t => t.Id == id);
+                Console.WriteLine(t.Id);
+                context.Remove(t);
+                context.SaveChanges();
+           }
+
+            
+        }
+
+    }
 }

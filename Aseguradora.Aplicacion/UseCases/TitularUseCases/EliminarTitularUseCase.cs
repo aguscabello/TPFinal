@@ -10,8 +10,8 @@ public class EliminarTitularUseCase
         this._mirepo = mirepo;
     }
 
-    public void Ejecutar(int dni)
+    public void Ejecutar(int id)
     {
-        _mirepo.EliminarTitular(dni);
+        _mirepo.EliminarTitular(id);
     }
 }

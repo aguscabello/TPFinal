@@ -26,6 +26,8 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 // DICONTAINTER
 builder.Services.AddTransient<AgregarTitularUseCase>();
+builder.Services.AddTransient<ListarTitularesUseCase>();
+builder.Services.AddTransient<EliminarTitularUseCase>();
 builder.Services.AddScoped<IRepositorioTitular, RepositorioTitular>();
 
 
