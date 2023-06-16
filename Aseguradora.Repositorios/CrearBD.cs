@@ -1,28 +1,35 @@
-using Aseguradora.Repositorios.Context;
+using Microsoft.EntityFrameworkCore;
 using Aseguradora.Repositorios;
 
-
-public class CrearBD
+public class CrearBD : DbContext
 {
 
-    public void Ejecutar()
+    public void Inicializar()
     {
         using (var context = new AseguradoraContext() )
         {
             context.Database.EnsureCreated();
-            AseguradoraInit.Inicializar(context);
-        }
-
-        using (var context = new AseguradoraContext())
-        {
-            Console.WriteLine("-- Tabla Titulares --");
-            foreach (var a in context.Titulares)
+            var connection = context.Database.GetDbConnection();
+            connection.Open();
+            using (var command = connection.CreateCommand())
             {
-                Console.WriteLine($"{a.Id} {a.Nombre}");
+                command.CommandText = "PRAGMA journal_mode=DELETE;";
+                command.ExecuteNonQuery();
             }
-            
-
+        
         }
+
+        // using (var context = new AseguradoraContext())
+        // {
+        //     Console.WriteLine("-- Tabla Titulares --");
+        //     foreach (var a in context.Titulares)
+        //     {
+        //         Console.WriteLine($"{a.Id} {a.Nombre}");
+        //     }          
+
+        // }
+
+
     }
 
 }

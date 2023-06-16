@@ -1,4 +1,5 @@
 namespace Aseguradora.Aplicacion.UseCases;
+
 using Aseguradora.Aplicacion.Interfaces;
 using Aseguradora.Aplicacion.Entidades;
 
