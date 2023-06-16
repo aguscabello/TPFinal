@@ -1,22 +1,36 @@
-@page "/Titular/{Id:int?}"
-@inject ObtenerTitularUseCase ObtenerClienteUseCase
-@inject ModificarTitularUseCase ModificarClienteUseCase
+@page "/Titular/{Dni:int?}"
+@inject ObtenerTitularUseCase ObtenerTitularUseCase
+@inject ModificarTitularUseCase ModificarTitularUseCase
 @inject NavigationManager Navegador
 
 
 
 <div style="margin: 25px; margin-left: 0;">
     <span>Modificar Titular</span>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>                
+                <th>Telefono</th>
+                <th>Direccion</th>
+                <th>Correo</th>  
+                <th>Accion</th>              
+            </tr>
+        </thead>
 
-    <div>
-        <input type="text"      placeholder="Nombre"       @bind="_titular.Nombre" style="max-width: 10%;" />
-        <input type="text"      placeholder="Apellido"       @bind="_titular.Apellido" style="max-width: 10%;" />
-        <input type="number"    placeholder="Dni"        @bind="_titular.Dni" style="max-width: 10%;" />    
-        <input type="number"    placeholder="Telefono"   @bind="_titular.Telefono" style="max-width: 10%;" />
-        <input type="text"      placeholder="Direccion"    @bind="_titular.Direccion" style="max-width: 10%;" />
-        <input type="text"      placeholder="Correo"       @bind="_titular.Correo" style="max-width: 10%;" />
-        <button @onclick="Modificar">Modificar</button>    
-    </div>
+        <tbody>
+        
+            <tr>
+                <td><input type="text"      placeholder="Nombre"       @bind="_titular.Nombre"  /></td>
+                <td><input type="text"      placeholder="Apellido"       @bind="_titular.Apellido"  /></td>         
+                <td><input type="number"    placeholder="Telefono"   @bind="_titular.Telefono"  /></td>
+                <td><input type="text"      placeholder="Direccion"    @bind="_titular.Direccion" /></td>
+                <td><input type="text"      placeholder="Correo"       @bind="_titular.Correo"  /></td>
+                <td><button @onclick="Modificar">Modificar</button> </td> 
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 
@@ -25,13 +39,13 @@
 @code 
 {
     Titular _titular = new Titular();
-    [Parameter] public int? Id { get; set; }
+    [Parameter] public int? Dni { get; set; }
      protected override void OnParametersSet()
     {
-        if (Id != null)
+        if (Dni != null)
         {
-            Titular titularHallado = new Titular();
-            //var titularHallado = ObtenerTitularUseCase.Ejecutar(Id.Value);
+           
+            var titularHallado = ObtenerTitularUseCase.Ejecutar(Dni.Value);
             if (titularHallado != null)
             {
                 _titular = titularHallado;
@@ -43,7 +57,7 @@
     {
         if (_titular != null)
         {
-            ModificarClienteUseCase.Ejecutar(_titular);
+            ModificarTitularUseCase.Ejecutar(_titular);
         }
         Navegador.NavigateTo("Titulares");
     }

@@ -10,8 +10,8 @@ public class ObtenerTitularUseCase
         this._mirepo = mirepo;
     }
 
-    public Titular Ejecutar(int id)
+    public Titular? Ejecutar(int dni)
     {
-        return _mirepo.ObtenerTitular(id);
+        return _mirepo.ObtenerTitular(dni);
     }
 }
