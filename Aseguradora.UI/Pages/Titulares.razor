@@ -12,10 +12,12 @@
 
 <PageTitle>Titulares</PageTitle>
 <DialogoError @ref=dialogoError/>
+<DialogoExito @ref=dialogoExito/>
+
 <h2> Titulares </h2>
-<span>Agregar Titular</span>
 
 <div style="margin: 25px; margin-left: 0;">    
+    <span>Agregar Titular</span>
     <table class="table">
    
         <thead>
@@ -81,8 +83,8 @@ else
                     <td>@t.Direccion</td>
                     <td>@t.Correo</td>            
                     <td>
-                        <button class="btn btn-primary">
-                            <span class="oi oi-pencil" @onclick="()=>ModificarTitular(t)"></span>
+                        <button class="btn btn-primary"  @onclick="()=>ModificarTitular(t)">
+                            <span class="oi oi-pencil"></span>
                         </button>
                         <button class="btn btn-danger" @onclick="()=>ConfirmarEliminacion(t)" >
                             <span class="oi oi-trash"></span>
@@ -115,9 +117,8 @@ else
                 if (a == null)                
                 {            
                     
-                    AgregarTitularUseCase.Ejecutar(t);            
-                    Navegador.NavigateTo("titulares",true);
-                    titulares = ListarTitularesUseCase.Ejecutar();
+                    AgregarTitularUseCase.Ejecutar(t); 
+                    Exito();                    
                 }else{
                     ElDniYaExiste();
                 }
@@ -136,6 +137,7 @@ else
     }
     DialogoConfirmacion dialogoConfirmacion = null!;    
     DialogoError   dialogoError = null!;
+    DialogoExito   dialogoExito = null!;
     private void ConfirmarEliminacion(Titular titular)
     {        
         dialogoConfirmacion.Mensaje = $"¿Desea eliminar al cliente {titular.Nombre} {titular.Apellido}?";
@@ -159,6 +161,19 @@ else
     {
         dialogoError.Mensaje = $"El DNI ya se encuentra registrado";        
         dialogoError.Mostrar();
+    }
+
+    private void Exito()
+    {
+        dialogoExito.Mensaje = $"El Titular se ha registrado correctamente";   
+        dialogoExito.OnConfirmado = EventCallback.Factory.Create(this, () => Actualizar());      
+        dialogoExito.Mostrar();
+    }
+
+    private void Actualizar()
+    {
+        Navegador.NavigateTo("titulares",true);
+        titulares = ListarTitularesUseCase.Ejecutar();
     }
 }
   

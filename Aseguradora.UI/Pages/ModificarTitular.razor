@@ -3,7 +3,7 @@
 @inject ModificarTitularUseCase ModificarTitularUseCase
 @inject NavigationManager Navegador
 
-
+<DialogoError @ref=dialogoError/>
 
 <div style="margin: 25px; margin-left: 0;">
     <span>Modificar Titular</span>
@@ -40,7 +40,9 @@
 {
     Titular _titular = new Titular();
     [Parameter] public int? Dni { get; set; }
-     protected override void OnParametersSet()
+
+    DialogoError   dialogoError = null!;
+    protected override void OnParametersSet()
     {
         if (Dni != null)
         {
@@ -55,11 +57,22 @@
 
     void Modificar()
     {
-        if (_titular != null)
+        if (_titular.Nombre != "" && _titular.Apellido != "" && _titular.Dni != 0 && _titular.Telefono != 0 && _titular.Direccion != "" && _titular.Correo != "" )
         {
+            Console.WriteLine(_titular.Nombre + " asd");
             ModificarTitularUseCase.Ejecutar(_titular);
+            Navegador.NavigateTo("Titulares");
+        } else
+        {
+            DebeCompletarTodosLosDatos();
         }
-        Navegador.NavigateTo("Titulares");
+        
+    }
+
+    private void DebeCompletarTodosLosDatos()
+    {
+        dialogoError.Mensaje = $"Debe completar todos los campos";        
+        dialogoError.Mostrar();
     }
 
 

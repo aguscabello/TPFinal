@@ -1,0 +1,34 @@
+@if(visible)
+{
+    <div class="dialogo-contenedor">
+        <div class="dialogo-contenido">
+            <h3>@Mensaje</h3>
+            <button class="btn btn-primary" @onclick="Cerrar">Aceptar</button>
+            
+        </div>
+    </div>
+}
+
+
+@code{
+    private bool visible = false;
+    [Parameter]
+    public string Mensaje {get;set;}="";
+    public void Mostrar()
+    {
+        visible=true;
+        StateHasChanged();   
+    }
+  
+    [Parameter]
+    public EventCallback OnConfirmado{get;set;}
+
+      void Cerrar()
+    {
+        visible = false;
+        OnConfirmado.InvokeAsync();
+    }
+
+
+
+}
