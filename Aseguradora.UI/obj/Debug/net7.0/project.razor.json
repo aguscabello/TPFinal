@@ -124,102 +124,6 @@
         }
       },
       {
-        "HashCode": 1550012828,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.ModificarTitular",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ModificarTitular"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Dni",
-            "TypeName": "System.Int32?",
-            "Metadata": {
-              "Common.PropertyName": "Dni",
-              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
-            }
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.ModificarTitular",
-          "Common.TypeNameIdentifier": "ModificarTitular",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -1325671021,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.ModificarTitular",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Aseguradora.UI.Pages.ModificarTitular"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Dni",
-            "TypeName": "System.Int32?",
-            "Metadata": {
-              "Common.PropertyName": "Dni",
-              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
-            }
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.ModificarTitular",
-          "Common.TypeNameIdentifier": "ModificarTitular",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -735725336,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Titulares",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Titulares"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Titulares",
-          "Common.TypeNameIdentifier": "Titulares",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 1902087901,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Titulares",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Aseguradora.UI.Pages.Titulares"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Titulares",
-          "Common.TypeNameIdentifier": "Titulares",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
         "HashCode": -1477940573,
         "Kind": "Components.Component",
         "Name": "Aseguradora.UI.Pages.ModificarVehiculo",
@@ -310,6 +214,102 @@
         "Metadata": {
           "Common.TypeName": "Aseguradora.UI.Pages.Vehiculos",
           "Common.TypeNameIdentifier": "Vehiculos",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -735725336,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Pages.Titulares",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Titulares"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Pages.Titulares",
+          "Common.TypeNameIdentifier": "Titulares",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 1902087901,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Pages.Titulares",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Aseguradora.UI.Pages.Titulares"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Pages.Titulares",
+          "Common.TypeNameIdentifier": "Titulares",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 1550012828,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Pages.ModificarTitular",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ModificarTitular"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Dni",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Dni",
+              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
+            }
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Pages.ModificarTitular",
+          "Common.TypeNameIdentifier": "ModificarTitular",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -1325671021,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Pages.ModificarTitular",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Aseguradora.UI.Pages.ModificarTitular"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Dni",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Dni",
+              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
+            }
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Pages.ModificarTitular",
+          "Common.TypeNameIdentifier": "ModificarTitular",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"

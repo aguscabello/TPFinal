@@ -6,6 +6,7 @@
 @inject EliminarVehiculoUseCase EliminarVehiculoUseCase
 @inject ObtenerVehiculoUseCase ObtenerVehiculoUseCase
 @inject EsUnicoUseCase EsUnicoUseCase
+@inject ListarTitularesUseCase ListarTitularesUseCase
  
 @*@using Aseguradora.UI.Shared;  @*PREGUNTAR PORQUE ME TIRA EL DIALOGO WARNING*@
 
@@ -32,7 +33,14 @@
                 <td style="max-width: 120px"><input type="text"      placeholder="Dominio"       @bind="v.Dominio" style="max-width: 100%;" /></td>
                 <td style="max-width: 120px"><input type="text"      placeholder="Marca"       @bind="v.Marca" style="max-width: 100%;" /></td>
                 <td style="max-width: 120px"><input type="number"    placeholder="Anio"        @bind="v.Anio" style="max-width: 100%;" />    </td>
-                <td style="max-width: 120px"><input type="number"    placeholder="TitularId"   @bind="v.TitularId" style="max-width: 100%;" /></td>
+                <td style="max-width: 120px">
+                    <select  @bind="v.TitularId" style="max-width: 100%;">
+                        @foreach (var opcion in opciones)
+                        {
+                            <option value="@opcion">@opcion</option>
+                        }
+                    </select>
+                </td>
                 <td style="max-width: 120px"><button @onclick="Agregar">Agregar</button>    </td>
             </tr>
         </tbody>
@@ -89,12 +97,23 @@ else
 {
 
     List<Vehiculo> vehiculos = new List<Vehiculo>();
+    List<int> opciones = new List<int>();
     protected override void OnInitialized()
     {
         vehiculos = ListarVehiculosUseCase.Ejecutar();
+       
+        List<Titular> titulares = ListarTitularesUseCase.Ejecutar();
+           
+        foreach(var t in titulares)
+        {
+            opciones.Add(t.Id);
+        }
+        
     }
     Vehiculo v = new Vehiculo();
 
+    private int opcionSeleccionada;
+  
     void Agregar()
     {
         //que pasa si agrego una id de titular que no existe.
