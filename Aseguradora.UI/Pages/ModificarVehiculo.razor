@@ -1,0 +1,73 @@
+@page "/Vehiculo/{Id:int?}"
+@inject ObtenerVehiculoUseCase ObtenerVehiculoUseCase
+@inject ModificarVehiculoUseCase ModificarVehiculoUseCase
+@inject NavigationManager Navegador
+
+<DialogoError @ref=dialogoError/>
+
+<div style="margin: 25px; margin-left: 0;">
+    <span>Modificar Vehiculo</span>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Anio</th>  
+                <th>Accion</th>              
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            <tr>
+                <td><input type="text"      placeholder="Marca"       @bind="v.Marca"  /></td>
+                <td><input type="number"      placeholder="Anio"       @bind="v.Anio"  /></td>            
+                <td><button @onclick="Modificar">Modificar</button> </td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+@code 
+{
+    Vehiculo v = new Vehiculo();
+    [Parameter]  public int? Id { get; set; }
+ 
+
+    DialogoError   dialogoError = null!;
+    protected override void OnParametersSet()
+    {
+        if (Id != null)
+        {
+           
+            var VehiculoHallado = ObtenerVehiculoUseCase.Ejecutar(Id.Value);
+            if (VehiculoHallado != null)
+            {
+                v = VehiculoHallado;
+            }
+        }
+    }
+
+    void Modificar()
+    {
+        if (v.Marca != "" && v.Anio != 0 )
+        {           
+            ModificarVehiculoUseCase.Ejecutar(v);
+            Navegador.NavigateTo("Vehiculos");
+        } else
+        {
+            DebeCompletarTodosLosDatos();
+        }
+        
+    }
+
+    private void DebeCompletarTodosLosDatos()
+    {
+        dialogoError.Mensaje = $"Debe completar todos los campos";        
+        dialogoError.Mostrar();
+    }
+
+
+}

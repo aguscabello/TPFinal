@@ -36,7 +36,8 @@ builder.Services.AddTransient<AgregarVehiculoUseCase>();
 builder.Services.AddTransient<ListarVehiculosUseCase>();
 builder.Services.AddTransient<EliminarVehiculoUseCase>();
 builder.Services.AddTransient<ModificarVehiculoUseCase>();
-builder.Services.AddTransient<ObtenerVehiculosUseCase>();
+builder.Services.AddTransient<ObtenerVehiculoUseCase>();
+builder.Services.AddTransient<EsUnicoUseCase>();
 builder.Services.AddScoped<IRepositorioVehiculo, RepositorioVehiculo>();
 
 

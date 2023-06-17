@@ -46,7 +46,21 @@ public class RepositorioVehiculo : IRepositorioVehiculo
     }
 
 
-    public Vehiculo? ObtenerVehiculo(string dominio)
+    public Vehiculo? ObtenerVehiculo(int id)
+    {
+        using (var context = new AseguradoraContext())
+        {
+            var t = context.Vehiculos.Where(t => t.Id== id).SingleOrDefault();
+            if (t == null){
+                return null;
+            }
+            return t;
+        }
+       
+    }
+
+
+        public Vehiculo? EsUnico(string dominio)
     {
         using (var context = new AseguradoraContext())
         {

@@ -4,7 +4,8 @@
 @inject AgregarVehiculoUseCase AgregarVehiculoUseCase
 @inject ListarVehiculosUseCase ListarVehiculosUseCase
 @inject EliminarVehiculoUseCase EliminarVehiculoUseCase
-@inject ObtenerVehiculosUseCase ObtenerVehiculosUseCase
+@inject ObtenerVehiculoUseCase ObtenerVehiculoUseCase
+@inject EsUnicoUseCase EsUnicoUseCase
  
 @*@using Aseguradora.UI.Shared;  @*PREGUNTAR PORQUE ME TIRA EL DIALOGO WARNING*@
 
@@ -18,7 +19,7 @@
     <table class="table">
          <thead>
             <tr>               
-                <th >Dominio</th >
+                <th >Dominio</th>
                 <th >Marca</th >
                 <th >Anio</th>
                 <th >TitularId</th >         
@@ -100,7 +101,7 @@ else
         if (v.Dominio != null && v.Marca != null && v.Anio != 0 && v.TitularId != 0 )
         {            
             if (v.Dominio != null){
-                var a = ObtenerVehiculosUseCase.Ejecutar(v.Dominio);                             
+                var a = EsUnicoUseCase.Ejecutar(v.Dominio);                             
                 if (a == null)
                 {         
                     AgregarVehiculoUseCase.Ejecutar(v);         
@@ -121,7 +122,7 @@ else
 
       void ModificarVehiculo(Vehiculo v)
     {
-        Navegador.NavigateTo($"Vehiculo/{v.Dominio}");
+        Navegador.NavigateTo($"Vehiculo/{v.Id}");
     }
     DialogoConfirmacion dialogo = null!;    
     DialogoError dialogoError = null!; 

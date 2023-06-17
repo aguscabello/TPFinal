@@ -1,17 +1,17 @@
 namespace Aseguradora.Aplicacion.UseCases;
 using Aseguradora.Aplicacion.Interfaces;
 using Aseguradora.Aplicacion.Entidades;
-public class ObtenerVehiculoUseCase
+public class EsUnicoUseCase
 {
        private readonly IRepositorioVehiculo _mirepo;
 
-    public ObtenerVehiculoUseCase (IRepositorioVehiculo mirepo)
+    public EsUnicoUseCase (IRepositorioVehiculo mirepo)
     {
         this._mirepo = mirepo;
     }
 
-    public Vehiculo? Ejecutar(int id)
+    public Vehiculo? Ejecutar(string dominio)
     {
-        return _mirepo.ObtenerVehiculo(id);
+        return _mirepo.EsUnico(dominio);
     }
 }
