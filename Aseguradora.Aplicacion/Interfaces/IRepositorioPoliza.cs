@@ -7,4 +7,8 @@ public interface IRepositorioPoliza
     void EliminarPoliza(int Id);
     List<Poliza> ListarPolizas();
     void ModificarPoliza(Poliza poliza);
+
+    Poliza? ObtenerPoliza (int id);
+
+    Boolean EsPolizaUnica (DateTime inicio, DateTime final, int vehiculoId);
 }

@@ -40,6 +40,14 @@ builder.Services.AddTransient<ObtenerVehiculoUseCase>();
 builder.Services.AddTransient<EsUnicoUseCase>();
 builder.Services.AddScoped<IRepositorioVehiculo, RepositorioVehiculo>();
 
+builder.Services.AddTransient<AgregarPolizaUseCase>();
+builder.Services.AddTransient<ListarPolizasUseCase>();
+builder.Services.AddTransient<EliminarPolizaUseCase>();
+builder.Services.AddTransient<ModificarPolizaUseCase>();
+builder.Services.AddTransient<ObtenerPolizaUseCase>();
+builder.Services.AddTransient<EsPolizaUnicaUseCase>();
+builder.Services.AddScoped<IRepositorioPoliza, RepositorioPoliza>();
+
 
 var app = builder.Build();
 

@@ -1,0 +1,207 @@
+@page "/Polizas"
+@inject NavigationManager Navegador;
+@inject IJSRuntime JsRuntime;
+@inject AgregarPolizaUseCase AgregarPolizaUseCase
+@inject ListarPolizasUseCase ListarPolizasUseCase
+@inject EliminarPolizaUseCase EliminarPolizaUseCase
+@inject ObtenerPolizaUseCase ObtenerPolizaUseCase
+@inject EsPolizaUnicaUseCase EsPolizaUnicaUseCase
+
+@inject ListarVehiculosUseCase ListarVehiculosUseCase
+ 
+@*@using Aseguradora.UI.Shared;  @*PREGUNTAR PORQUE ME TIRA EL DIALOGO WARNING*@
+
+<PageTitle>Polizas</PageTitle>
+<DialogoError @ref=dialogoError />
+<DialogoExito @ref=dialogoExito/>
+
+<h2> Polizas </h2>
+<div style="margin: 25px; margin-left: 0;">
+    <span>Agregar Poliza</span>
+    <table class="table">
+         <thead>
+            <tr>               
+                <th >ValorAsegurado</th>
+                <th >Franquicia</th >
+                <th >Cobertura</th>
+                <th >Fecha Inicio</th>
+                <th >Fecha Fin</th>
+                <th >VehiculoId</th >         
+                <th >Accion</th >              
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    
+                <td style="max-width: 100px"><input type="number"      placeholder="Valor Asegurado"       @bind="p.ValorAsegurado" style="max-width: 100%;" /></td>
+                <td style="max-width: 100px"><input type="text"      placeholder="Franquicia"       @bind="p.Franquicia" style="max-width: 100%;" /></td>
+                <td style="max-width: 100px">
+                    <select type="text"    @bind="p.Cobertura" style="max-width: 100%;" >   
+                          @foreach (var cober in coberturas)
+                        {
+                            <option value="@cober">@cober</option>
+                        }
+                    </select>
+                </td>
+                <td style="max-width: 100px"><input type="text"    placeholder="Inicio"        @bind="p.FechaInicio" style="max-width: 100%;" />    </td>
+                <td style="max-width: 100px"><input type="text"    placeholder="Fin"        @bind="p.FechaFin" style="max-width: 100%;" />    </td>
+                <td style="max-width: 100px">
+                    <select  @bind="p.VehiculoId" style="max-width: 100%;">
+                        @foreach (var opcion in opciones)
+                        {
+                            <option value="@opcion">@opcion</option>
+                        }
+                    </select>
+                </td>
+                <td style="max-width: 100px"><button @onclick="Agregar">Agregar</button>    </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+
+@if (polizas == null)
+{
+    <p><em>Cargando Polizas...</em></p>
+}
+else
+{
+    
+    <span>Listado de Polizas</span>
+    <DialogoConfirmacion @ref=dialogo />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Valor Asegurado</th>
+                <th>Franquicia</th>
+                <th>Cobertura</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>Vehiculo Id</th>
+                <th>Accion</th>              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in polizas)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.ValorAsegurado</td>
+                    <td>@p.Franquicia</td>
+                    <td>@p.Cobertura</td>
+                    <td>@p.FechaInicio</td>
+                    <td>@p.FechaFin</td>
+                    <td>@p.VehiculoId</td>       
+                    <td>
+                        <button class="btn btn-primary" @onclick="()=>ModificarPoliza(p)">
+                            <span class="oi oi-pencil"></span>
+                        </button>
+                        <button class="btn btn-danger" @onclick="()=>ConfirmarEliminacion(p)" >
+                            <span class="oi oi-trash"></span>
+                        </button>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code 
+{
+
+    List<Poliza> polizas = new List<Poliza>();
+    List<int> opciones = new List<int>();
+    List<string> coberturas = new List<string>();
+    protected override void OnInitialized()
+    {
+        polizas = ListarPolizasUseCase.Ejecutar();
+       
+        List<Vehiculo> vehiculos = ListarVehiculosUseCase.Ejecutar();
+           
+        foreach(var v in vehiculos)
+        {
+            opciones.Add(v.Id);
+        }
+        coberturas.Add("Responsabilidad Civil");
+        coberturas.Add("Todo Riesgo");
+        
+    }
+    Poliza p = new Poliza();
+    DateTime inicial = new DateTime(2000,1,1);
+
+ 
+  
+    void Agregar()
+    {
+        //que pasa si agrego una id de titular que no existe.
+        if (p.ValorAsegurado != 0 && p.Franquicia != null && p.Cobertura != null && p.VehiculoId != 0 && !p.FechaInicio.Equals(inicial) && !p.FechaFin.Equals(inicial))
+        {            
+            if (EsPolizaUnicaUseCase.Ejecutar(p.FechaInicio,p.FechaFin, p.VehiculoId))               
+            {          
+                AgregarPolizaUseCase.Ejecutar(p);         
+                Exito();     
+            }else
+            {
+                FechaSuperpuesta();
+            } 
+                        
+
+        }else{
+            DebeCompletarTodosLosDatos();  
+        }
+    }
+
+
+
+
+      void ModificarPoliza(Poliza v)
+    {
+        Navegador.NavigateTo($"Poliza/{v.Id}");
+    }
+    DialogoConfirmacion dialogo = null!;    
+    DialogoError dialogoError = null!; 
+    DialogoExito   dialogoExito = null!;
+    private void ConfirmarEliminacion(Poliza poliza)
+    {        
+        dialogo.Mensaje = $"¿Desea eliminar la Poliza?";
+        dialogo.OnConfirmado = EventCallback.Factory.Create(this, () => Eliminar(poliza));   ///ME TIRA UN DIALOGO WARNING AUNQ ESTO ES LO QUE HACE LA TEORIA
+        dialogo.Mostrar();
+    }
+    private void Eliminar(Poliza p)
+    {
+
+        EliminarPolizaUseCase.Ejecutar(p.Id);
+        polizas = ListarPolizasUseCase.Ejecutar(); 
+
+    }
+
+    private void DebeCompletarTodosLosDatos()  
+    {
+    dialogoError.Mensaje = $"Debe completar todos los campos";        
+    dialogoError.Mostrar();
+    }
+
+    private void FechaSuperpuesta()
+    {
+        dialogoError.Mensaje = $"La fecha seleccionada se superpone con la fecha de otra poliza del auto seleccionado";        
+        dialogoError.Mostrar();
+    }
+
+    private void Exito()
+    {
+        dialogoExito.Mensaje = $"La Poliza se ha registrado correctamente";
+        dialogoExito.OnConfirmado = EventCallback.Factory.Create(this, () => Actualizar());           
+        dialogoExito.Mostrar();
+    }
+
+    private void Actualizar()
+    {
+        Navegador.NavigateTo("Polizas",true);
+        polizas = ListarPolizasUseCase.Ejecutar();
+    }
+
+
+}

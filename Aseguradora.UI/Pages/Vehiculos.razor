@@ -112,7 +112,7 @@ else
     }
     Vehiculo v = new Vehiculo();
 
-    private int opcionSeleccionada;
+ 
   
     void Agregar()
     {
@@ -172,14 +172,14 @@ else
         dialogoError.Mostrar();
     }
 
-        private void Exito()
+    private void Exito()
     {
         dialogoExito.Mensaje = $"El Vehiculo se ha registrado correctamente";
         dialogoExito.OnConfirmado = EventCallback.Factory.Create(this, () => Actualizar());           
         dialogoExito.Mostrar();
     }
 
-        private void Actualizar()
+    private void Actualizar()
     {
         Navegador.NavigateTo("vehiculos",true);
         vehiculos = ListarVehiculosUseCase.Ejecutar();
