@@ -3,17 +3,11 @@ namespace Aseguradora.Aplicacion.Entidades;
 public class Tercero:Persona
 {
     
-    public string? NombreAseguradora{get;set;}
     public int SiniestroId{get;set;}
-
-    public Tercero(){ }
-
+    public string NombreAseguradora{get;set;} ="";
     
 
-    public override string ToString()
-    {
-        return  $"{Id}: {Dni} {Apellido} {Nombre} {Telefono} {NombreAseguradora} {SiniestroId}";
-    }
+
 
 
 }

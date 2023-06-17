@@ -32,6 +32,12 @@ builder.Services.AddTransient<ModificarTitularUseCase>();
 builder.Services.AddTransient<ObtenerTitularUseCase>();
 builder.Services.AddScoped<IRepositorioTitular, RepositorioTitular>();
 
+builder.Services.AddTransient<AgregarVehiculoUseCase>();
+builder.Services.AddTransient<ListarVehiculosUseCase>();
+builder.Services.AddTransient<EliminarVehiculoUseCase>();
+builder.Services.AddTransient<ModificarVehiculoUseCase>();
+builder.Services.AddTransient<ObtenerVehiculosUseCase>();
+builder.Services.AddScoped<IRepositorioVehiculo, RepositorioVehiculo>();
 
 
 var app = builder.Build();

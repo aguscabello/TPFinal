@@ -4,7 +4,10 @@
 @inject AgregarTitularUseCase AgregarTitularUseCase
 @inject ListarTitularesUseCase ListarTitularesUseCase
 @inject EliminarTitularUseCase EliminarTitularUseCase
+@inject ObtenerTitularUseCase ObtenerTitularUseCase
 
+
+ 
 @using Aseguradora.UI.Shared;  @*PREGUNTAR PORQUE ME TIRA EL DIALOGO WARNING*@
 
 <PageTitle>Titulares</PageTitle>
@@ -86,18 +89,28 @@ else
 
     void Agregar()
     {
-        if (t.Nombre != null && t.Apellido != null && t.Dni != null && t.Telefono != null && t.Direccion != null && t.Correo != null )
+        if (t.Nombre != null && t.Apellido != null && t.Dni != 0 && t.Telefono != 0 && t.Direccion != null && t.Correo != null )
         {
-            AgregarTitularUseCase.Ejecutar(t);            
-            titulares = ListarTitularesUseCase.Ejecutar();
+            if (t.Dni != 0){
+                var a = ObtenerTitularUseCase.Ejecutar(t.Dni);                
+                if (a == null)                
+                {            
+                    
+                    AgregarTitularUseCase.Ejecutar(t);            
+                    Navegador.NavigateTo("titulares",true);
+                    titulares = ListarTitularesUseCase.Ejecutar();
+                }else{
+                    Console.WriteLine("ya existe ese dni");
+                }
+            }   
         }
         //else
-            //cartel para completar datos
+            //cartel debe completar datos
     }
 
     void ModificarTitular(Titular t)
     {
-        Navegador.NavigateTo($"Titular/{t.Id}");
+        Navegador.NavigateTo($"Titular/{t.Dni}");
     }
     DialogoConfirmacion dialogo = null!;    
     private void ConfirmarEliminacion(Titular titular)

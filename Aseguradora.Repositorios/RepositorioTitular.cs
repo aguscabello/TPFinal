@@ -24,19 +24,38 @@ public class RepositorioTitular : IRepositorioTitular
         {
            List<Titular> a = context.Titulares.ToList();
            return a;
-        }     
+        }    
         
     }
     public void ModificarTitular(Titular titular)
     {
+        using (var context = new AseguradoraContext())
+        {
+            var titularN = context.Titulares.Where(t => t.Dni == titular.Dni).SingleOrDefault();
+            if (titularN != null)
+            {
+                 titularN.Nombre = titular.Nombre;
+                 titularN.Apellido = titular.Apellido;
+                 titularN.Correo = titular.Correo;
+                 titularN.Direccion= titular.Direccion;
+                 titularN.Telefono = titular.Telefono;
+                 context.SaveChanges();
+
+            }
+
+        }
 
     }
 
-    public Titular ObtenerTitular(int id)
+    public Titular? ObtenerTitular(int dni)
     {
         using (var context = new AseguradoraContext())
         {
-            Titular t = context.Titulares.First(t => t.Id == id);
+            Console.WriteLine(dni + " Obtener dni");
+            var t = context.Titulares.Where(t => t.Dni == dni).SingleOrDefault();
+            if (t == null){
+                return null;
+            }
             return t;
         }
        
@@ -44,17 +63,15 @@ public class RepositorioTitular : IRepositorioTitular
     public void EliminarTitular(int id)
     {
         using (var context = new AseguradoraContext())
-        {                         
-            if (context.Titulares.First(t => t.Id == id) != null)
-            {                
-                Titular t = context.Titulares.First(t => t.Id == id);
-                context.Remove(t);
+        
+        {         
+            var t = context.Titulares.Where(t => t.Id == id).SingleOrDefault();               
+            if (t != null)
+            {     
+                context.Remove(t);           ///ELIMINAR EN CASCADA     
                 context.SaveChanges();
-           }
-
-           ///ELIMINAR EN CASCADA
-
-            
+            }
+          
         }
 
     }

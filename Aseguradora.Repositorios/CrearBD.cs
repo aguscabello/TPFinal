@@ -19,18 +19,12 @@ public class CrearBD : DbContext
         
         }
 
-        // using (var context = new AseguradoraContext())
-        // {
-        //     Console.WriteLine("-- Tabla Titulares --");
-        //     foreach (var a in context.Titulares)
-        //     {
-        //         Console.WriteLine($"{a.Id} {a.Nombre}");
-        //     }          
-
-        // }
-
-
     }
+
+
+
+
+
 
 }
 
