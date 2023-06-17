@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0RpYWxvZ29Db25maXJtYWNpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-xfzr1fvw2y
 
+[/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Shared/DialogoError.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0RpYWxvZ29FcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-5u7d6e76d2
+
 [/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-tqmg7t31dg

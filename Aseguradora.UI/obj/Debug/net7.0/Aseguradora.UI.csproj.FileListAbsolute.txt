@@ -138,3 +138,4 @@
 /home/alumnos/Escritorio/TPFinal/Aseguradora.UI/obj/Debug/net7.0/Aseguradora.UI.csproj.CopyComplete
 /home/alumnos/Escritorio/TPFinal/Aseguradora.UI/obj/Debug/net7.0/Aseguradora.UI.genruntimeconfig.cache
 /home/alumnos/Escritorio/TPFinal/Aseguradora.UI/obj/Debug/net7.0/ref/Aseguradora.UI.dll
+/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/obj/Debug/net7.0/scopedcss/Shared/DialogoError.razor.rz.scp.css

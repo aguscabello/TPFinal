@@ -11,20 +11,38 @@
 @using Aseguradora.UI.Shared;  @*PREGUNTAR PORQUE ME TIRA EL DIALOGO WARNING*@
 
 <PageTitle>Titulares</PageTitle>
-
+<DialogoError @ref=dialogoError/>
 <h2> Titulares </h2>
-<div style="margin: 25px; margin-left: 0;">
-    <span>Agregar Titular</span>
+<span>Agregar Titular</span>
 
-    <div>
-        <input type="text"      placeholder="Nombre"       @bind="t.Nombre" style="max-width: 10%;" />
-        <input type="text"      placeholder="Apellido"       @bind="t.Apellido" style="max-width: 10%;" />
-        <input type="number"    placeholder="Dni"        @bind="t.Dni" style="max-width: 10%;" />    
-        <input type="number"    placeholder="Telefono"   @bind="t.Telefono" style="max-width: 10%;" />
-        <input type="text"      placeholder="Direccion"    @bind="t.Direccion" style="max-width: 10%;" />
-        <input type="text"      placeholder="Correo"       @bind="t.Correo" style="max-width: 10%;" />
-        <button @onclick="Agregar">Agregar</button>    
-    </div>
+<div style="margin: 25px; margin-left: 0;">    
+    <table class="table">
+   
+        <thead>
+            <tr>               
+                <th >Nombre</th >
+                <th >Apellido</th >
+                <th >Dni</th>
+                <th >Telefono</th >
+                <th >Direccion</th>
+                <th >Correo</th >  
+                <th >Accion</th >              
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td style="max-width: 120px"> <input type="text"      placeholder="Nombre"       @bind="t.Nombre" style="max-width: 100%" > </td>
+                <td style="max-width: 120px"> <input type="text"      placeholder="Apellido"       @bind="t.Apellido" style="max-width: 100%" /></td>
+                <td style="max-width: 120px" > <input type="number"    placeholder="Dni"        @bind="t.Dni"  style="max-width: 100%"/>    </td>
+                <td style="max-width: 120px"> <input type="number"    placeholder="Telefono"   @bind="t.Telefono" style="max-width: 100%" /></td>
+                <td style="max-width: 120px"> <input type="text"      placeholder="Direccion"    @bind="t.Direccion" style="max-width: 100%" /></td>
+                <td style="max-width: 120px"> <input type="text"      placeholder="Correo"       @bind="t.Correo" style="max-width: 100%" /></td>
+                <td style="max-width: 120px"> <button @onclick="Agregar">Agregar</button>  </td>  
+            </tr>
+        </tbody>
+
+    </table>
 </div>
 
 
@@ -36,7 +54,8 @@ else
 {
     
     <span>Listado de Titulares</span>
-    <DialogoConfirmacion @ref=dialogo />
+    <DialogoConfirmacion @ref=dialogoConfirmacion />
+    
     <table class="table">
         <thead>
             <tr>
@@ -100,24 +119,28 @@ else
                     Navegador.NavigateTo("titulares",true);
                     titulares = ListarTitularesUseCase.Ejecutar();
                 }else{
-                    Console.WriteLine("ya existe ese dni");
+                    ElDniYaExiste();
                 }
             }   
-        }
-        //else
-            //cartel debe completar datos
+        }else
+            {
+                DebeCompletarTodosLosDatos();
+            }
+                
     }
 
     void ModificarTitular(Titular t)
     {
+        Console.WriteLine("Entra");
         Navegador.NavigateTo($"Titular/{t.Dni}");
     }
-    DialogoConfirmacion dialogo = null!;    
+    DialogoConfirmacion dialogoConfirmacion = null!;    
+    DialogoError   dialogoError = null!;
     private void ConfirmarEliminacion(Titular titular)
     {        
-        dialogo.Mensaje = $"¿Desea eliminar al cliente {titular.Nombre} {titular.Apellido}?";
-        dialogo.OnConfirmado = EventCallback.Factory.Create(this, () => Eliminar(titular));   ///ME TIRA UN DIALOGO WARNING AUNQ ESTO ES LO QUE HACE LA TEORIA
-        dialogo.Mostrar();
+        dialogoConfirmacion.Mensaje = $"¿Desea eliminar al cliente {titular.Nombre} {titular.Apellido}?";
+        dialogoConfirmacion.OnConfirmado = EventCallback.Factory.Create(this, () => Eliminar(titular));   ///ME TIRA UN DIALOGO WARNING AUNQ ESTO ES LO QUE HACE LA TEORIA
+        dialogoConfirmacion.Mostrar();
     }
     private void Eliminar(Titular t)
     {
@@ -125,6 +148,17 @@ else
         EliminarTitularUseCase.Ejecutar(t.Id);
         titulares = ListarTitularesUseCase.Ejecutar(); //se actualiza la lista de clientes
 
+    }
+
+    private void DebeCompletarTodosLosDatos()
+    {
+        dialogoError.Mensaje = $"Debe completar todos los campos";        
+        dialogoError.Mostrar();
+    }
+    private void ElDniYaExiste()
+    {
+        dialogoError.Mensaje = $"El DNI ya se encuentra registrado";        
+        dialogoError.Mostrar();
     }
 }
   
