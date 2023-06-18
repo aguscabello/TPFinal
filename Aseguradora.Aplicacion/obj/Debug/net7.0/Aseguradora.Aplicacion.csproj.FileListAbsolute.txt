@@ -22,3 +22,15 @@
 /home/alumnos/Escritorio/TPFinal/Aseguradora.Aplicacion/obj/Debug/net7.0/refint/Aseguradora.Aplicacion.dll
 /home/alumnos/Escritorio/TPFinal/Aseguradora.Aplicacion/obj/Debug/net7.0/Aseguradora.Aplicacion.pdb
 /home/alumnos/Escritorio/TPFinal/Aseguradora.Aplicacion/obj/Debug/net7.0/ref/Aseguradora.Aplicacion.dll
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\bin\Debug\net7.0\Aseguradora.Aplicacion.deps.json
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\bin\Debug\net7.0\Aseguradora.Aplicacion.dll
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\bin\Debug\net7.0\Aseguradora.Aplicacion.pdb
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\obj\Debug\net7.0\Aseguradora.Aplicacion.csproj.AssemblyReference.cache
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\obj\Debug\net7.0\Aseguradora.Aplicacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\obj\Debug\net7.0\Aseguradora.Aplicacion.AssemblyInfoInputs.cache
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\obj\Debug\net7.0\Aseguradora.Aplicacion.AssemblyInfo.cs
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\obj\Debug\net7.0\Aseguradora.Aplicacion.csproj.CoreCompileInputs.cache
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\obj\Debug\net7.0\Aseguradora.Aplicacion.dll
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\obj\Debug\net7.0\refint\Aseguradora.Aplicacion.dll
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\obj\Debug\net7.0\Aseguradora.Aplicacion.pdb
+C:\Users\cabel\TPFinal\Aseguradora.Aplicacion\obj\Debug\net7.0\ref\Aseguradora.Aplicacion.dll

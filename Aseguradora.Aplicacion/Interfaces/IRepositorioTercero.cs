@@ -6,4 +6,5 @@ public interface IRepositorioTercero
     List<Tercero> ListarTerceros();
     void ModificarTercero(Tercero tercero);
     void EliminarTercero(int id);    
+    Tercero? ObtenerTercero(int id);
 }

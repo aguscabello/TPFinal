@@ -1155,19 +1155,19 @@
     ]
   },
   "packageFolders": {
-    "/home/mark/.nuget/packages/": {}
+    "C:\\Users\\cabel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mark/Escritorio/code/TPFinal/Aseguradora.Repositorios/Aseguradora.Repositorios.csproj",
+      "projectUniqueName": "C:\\Users\\cabel\\TPFinal\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj",
       "projectName": "Aseguradora.Repositorios",
-      "projectPath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.Repositorios/Aseguradora.Repositorios.csproj",
-      "packagesPath": "/home/mark/.nuget/packages/",
-      "outputPath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.Repositorios/obj/",
+      "projectPath": "C:\\Users\\cabel\\TPFinal\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj",
+      "packagesPath": "C:\\Users\\cabel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cabel\\TPFinal\\Aseguradora.Repositorios\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/mark/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\cabel\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -1179,8 +1179,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/mark/Escritorio/code/TPFinal/Aseguradora.Aplicacion/Aseguradora.Aplicacion.csproj": {
-              "projectPath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.Aplicacion/Aseguradora.Aplicacion.csproj"
+            "C:\\Users\\cabel\\TPFinal\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\cabel\\TPFinal\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj"
             }
           }
         }
@@ -1216,7 +1216,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.107/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

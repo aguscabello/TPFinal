@@ -1,0 +1,193 @@
+@page "/Siniestros"
+@inject NavigationManager Navegador;
+@inject IJSRuntime JsRuntime;
+@inject AgregarSiniestroUseCase AgregarSiniestroUseCase
+@inject ListarSiniestrosUseCase ListarSiniestrosUseCase
+@inject EliminarSiniestroUseCase EliminarSiniestroUseCase
+@inject ObtenerSiniestroUseCase ObtenerSiniestroUseCase
+@inject ListarPolizasUseCase ListarPolizasUseCase
+@inject VerificarCoberturaUseCase VerificarCoberturaUseCase
+
+
+<PageTitle>Siniestros</PageTitle>
+<DialogoError @ref=dialogoError />
+<DialogoExito @ref=dialogoExito/>
+
+
+<h2> Siniestros </h2>
+<div style="margin: 25px; margin-left: 0;">
+    <span>Agregar Siniestro</span>
+    <table class="table">
+         <thead>
+            <tr>               
+                <th >FechaIngreso</th>
+                <th >FechaOcurrencia</th >
+                <th >Dirección</th>
+                <th >Descripcion</th>
+                <th >Poliza Id</th >         
+                <th >Accion</th >              
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    
+                <td style="max-width: 120px"><input type="text"      placeholder="FechaIngreso"       @bind="s.FechaIngreso" style="max-width: 100%;" /></td>
+                <td style="max-width: 120px"><input type="text"      placeholder="FechaOcurrencia"       @bind="s.FechaOcurrencia" style="max-width: 100%;" /></td>
+                <td style="max-width: 120px"><input type="text"      placeholder="Direccion"        @bind="s.Direccion" style="max-width: 100%;" />    </td>
+                <td style="max-width: 120px"><input type="text"      placeholder="Descripcion"        @bind="s.Descripcion" style="max-width: 100%;" />    </td>
+                <td style="max-width: 120px">
+                    <select  @bind="s.PolizaId" style="max-width: 100%;">
+                        @foreach (var opcion in opciones)
+                        {
+                            <option value="@opcion">@opcion</option>
+                        }
+                    </select>
+                </td>
+                <td style="max-width: 120px"><button @onclick="Agregar">Agregar</button>    </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+
+@if (siniestros == null)
+{
+    <p><em>Cargando siniestros...</em></p>
+}
+else
+{
+    
+    <span>Listado de Siniestros</span>
+    <DialogoConfirmacion @ref=dialogo />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FechaIngreso</th>
+                <th>FechaOcurrencia</th>
+                <th>Direccion</th>
+                <th>Descripcion</th>
+                <th>PolizaId</th>
+                <th>Accion</th>              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in siniestros)
+            {
+                <tr>
+                    <td>@s.Id</td>
+                    <td>@s.FechaIngreso</td>
+                    <td>@s.FechaOcurrencia</td>
+                    <td>@s.Direccion</td>
+                    <td>@s.Descripcion</td>       
+                    <td>@s.PolizaId</td>   
+                    <td>
+                        <button class="btn btn-primary" @onclick="()=>ModificarSiniestro(s)">
+                            <span class="oi oi-pencil"></span>
+                        </button>
+                        <button class="btn btn-danger" @onclick="()=>ConfirmarEliminacion(s)" >
+                            <span class="oi oi-trash"></span>
+                        </button>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code 
+{
+
+    List<Siniestro>? siniestros = new List<Siniestro>();
+    List<int> opciones = new List<int>();
+    protected override void OnInitialized()
+    {
+        DateTime fechaActual = DateTime.Now;
+
+        siniestros = ListarSiniestrosUseCase.Ejecutar();
+       
+        List<Poliza> polizas = ListarPolizasUseCase.Ejecutar();
+           
+        foreach(var p in polizas)
+        {
+            opciones.Add(p.Id);
+        }
+        
+    }
+    
+    Siniestro s = new Siniestro();
+
+  
+    DateTime inicial = new DateTime(2000,1,1);
+    
+    void Agregar()
+    {
+        if (!s.FechaIngreso.Equals(inicial) && !s.FechaOcurrencia.Equals(inicial) && s.Descripcion != null && s.Direccion != null && s.PolizaId != 0 )
+        {            
+            if (VerificarCoberturaUseCase.Ejecutar(s.FechaOcurrencia,s.PolizaId)){                                   
+                AgregarSiniestroUseCase.Ejecutar(s);         
+                Exito();     
+            }else
+                {
+                    SeguroNoVigente();//cambiar mensaje
+                }
+                        
+            
+        }else{
+            DebeCompletarTodosLosDatos();  
+        }
+    }
+
+    void ModificarSiniestro(Siniestro s)
+    {
+        Navegador.NavigateTo($"Siniestro/{s.Id}");
+    }
+    DialogoConfirmacion dialogo = null!;    
+    DialogoError dialogoError = null!; 
+     DialogoExito   dialogoExito = null!;
+    private void ConfirmarEliminacion(Siniestro Siniestro)
+    {        
+        dialogo.Mensaje = $"¿Desea eliminar el siniestro {Siniestro.FechaIngreso} {Siniestro.Descripcion}?";
+        dialogo.OnConfirmado = EventCallback.Factory.Create(this, () => Eliminar(Siniestro));   ///ME TIRA UN DIALOGO WARNING AUNQ ESTO ES LO QUE HACE LA TEORIA
+        dialogo.Mostrar();
+    }
+
+    private void Eliminar(Siniestro s)
+    {
+
+        EliminarSiniestroUseCase.Ejecutar(s.Id);
+        siniestros = ListarSiniestrosUseCase.Ejecutar(); 
+
+    }
+
+    private void DebeCompletarTodosLosDatos()  
+    {
+        dialogoError.Mensaje = $"Debe completar todos los campos";        
+        dialogoError.Mostrar();
+    }
+
+    private void SeguroNoVigente()
+    {
+        dialogoError.Mensaje = $"El seguro no está vigente";        
+        dialogoError.Mostrar();
+    }
+
+    private void Exito()
+    {
+        dialogoExito.Mensaje = $"El Siniestro se ha registrado correctamente";
+        dialogoExito.OnConfirmado = EventCallback.Factory.Create(this, () => Actualizar());           
+        dialogoExito.Mostrar();
+    }
+
+    private void Actualizar()
+    {
+        Navegador.NavigateTo("Siniestros",true);
+        siniestros = ListarSiniestrosUseCase.Ejecutar();
+    }
+
+
+
+}

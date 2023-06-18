@@ -48,6 +48,16 @@ builder.Services.AddTransient<ObtenerPolizaUseCase>();
 builder.Services.AddTransient<EsPolizaUnicaUseCase>();
 builder.Services.AddScoped<IRepositorioPoliza, RepositorioPoliza>();
 
+//SINIESTROS
+builder.Services.AddTransient<AgregarSiniestroUseCase>();
+builder.Services.AddTransient<ListarSiniestrosUseCase>();
+builder.Services.AddTransient<EliminarSiniestroUseCase>();
+builder.Services.AddTransient<ModificarSiniestroUseCase>();
+builder.Services.AddTransient<ObtenerSiniestroUseCase>();
+builder.Services.AddTransient<VerificarCoberturaUseCase>();
+builder.Services.AddScoped<IRepositorioSiniestro, RepositorioSiniestro>();
+
+
 
 var app = builder.Build();
 

@@ -1,0 +1,78 @@
+@page "/Siniestro/{Id:int?}"
+@inject ObtenerSiniestroUseCase ObtenerSiniestroUseCase
+@inject ModificarSiniestroUseCase ModificarSiniestroUseCase
+@inject NavigationManager Navegador
+
+<DialogoError @ref=dialogoError/>
+
+<div style="margin: 25px; margin-left: 0;">
+    <span>Modificar Siniestro</span>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fecha Ingreso</th>
+                <th>Fecha Ocurrencia</th>  
+                <th>Direccion</th>  
+                <th>Descripcion</th>  
+                <th>Accion</th>              
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            <tr>
+                <td><input type="text"      placeholder="FechaIngreso"       @bind="s.FechaIngreso"  /></td>
+                <td><input type="text"      placeholder="FechaOcurrencia"       @bind="s.FechaOcurrencia"  /></td>   
+                <td><input type="text"      placeholder="Direccion"       @bind="s.Direccion"  /></td> 
+                <td><input type="text"      placeholder="Descripcion"       @bind="s.Descripcion"  /></td>        
+                <td><button @onclick="Modificar">Modificar</button> </td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+@code 
+{
+    Siniestro s = new Siniestro();
+    [Parameter]  public int? Id { get; set; }
+ 
+
+    DialogoError   dialogoError = null!;
+    protected override void OnParametersSet()
+    {
+        if (Id != null)
+        {
+           
+            var SiniestroHallado = ObtenerSiniestroUseCase.Ejecutar(Id.Value);
+            if (SiniestroHallado != null)
+            {
+                s = SiniestroHallado;
+            }
+        }
+    }
+
+    DateTime inicial = new DateTime(2000,1,1);
+    void Modificar()
+    {
+        if (!s.FechaIngreso.Equals(inicial) && !s.FechaOcurrencia.Equals(inicial) && s.Direccion != " " && s.Descripcion != " " )
+        {           
+            ModificarSiniestroUseCase.Ejecutar(s);
+            Navegador.NavigateTo("Siniestros");
+        } else
+        {
+            DebeCompletarTodosLosDatos();
+        }
+        
+    }
+
+    private void DebeCompletarTodosLosDatos()
+    {
+        dialogoError.Mensaje = $"Debe completar todos los campos";        
+        dialogoError.Mostrar();
+    }
+
+
+}
