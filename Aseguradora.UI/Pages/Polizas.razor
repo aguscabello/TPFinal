@@ -139,7 +139,7 @@ else
         //que pasa si agrego una id de titular que no existe.
         if (p.ValorAsegurado != 0 && p.Franquicia != null && p.Cobertura != null && p.VehiculoId != 0 && !p.FechaInicio.Equals(inicial) && !p.FechaFin.Equals(inicial))
         {            
-            if (EsPolizaUnicaUseCase.Ejecutar(p.FechaInicio,p.FechaFin, p.VehiculoId))               
+            if (EsPolizaUnicaUseCase.Ejecutar(p))               
             {          
                 AgregarPolizaUseCase.Ejecutar(p);         
                 Exito();     

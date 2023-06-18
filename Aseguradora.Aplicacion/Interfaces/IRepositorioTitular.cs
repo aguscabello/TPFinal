@@ -7,4 +7,6 @@ public interface IRepositorioTitular
     void ModificarTitular(Titular titular);
     void EliminarTitular(int id);    
     Titular? ObtenerTitular(int dni);
+
+    Titular? EsTitularUnico (Titular titular);
 }

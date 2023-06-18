@@ -1,6 +1,7 @@
 @page "/Titular/{Dni:int?}"
 @inject ObtenerTitularUseCase ObtenerTitularUseCase
 @inject ModificarTitularUseCase ModificarTitularUseCase
+@inject EsTitularUnicoUseCase  EsTitularUnicoUseCase
 @inject NavigationManager Navegador
 
 <DialogoError @ref=dialogoError/>
@@ -11,7 +12,8 @@
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Apellido</th>                
+                <th>Apellido</th>     
+                <th >Dni</th>           
                 <th>Telefono</th>
                 <th>Direccion</th>
                 <th>Correo</th>  
@@ -23,7 +25,8 @@
         
             <tr>
                 <td><input type="text"      placeholder="Nombre"       @bind="_titular.Nombre"  /></td>
-                <td><input type="text"      placeholder="Apellido"     @bind="_titular.Apellido"  /></td>     
+                <td><input type="text"      placeholder="Apellido"     @bind="_titular.Apellido"  /></td>  
+                <td><input type="text"      placeholder="Dni"          @bind="_titular.Dni"  /></td>    
                 <td><input type="number"    placeholder="Telefono"     @bind="_titular.Telefono"  /></td>
                 <td><input type="text"      placeholder="Direccion"    @bind="_titular.Direccion" /></td>
                 <td><input type="text"      placeholder="Correo"       @bind="_titular.Correo"  /></td>
@@ -58,9 +61,14 @@
     {
         if (_titular.Nombre != "" && _titular.Apellido != "" && _titular.Dni != 0 && _titular.Telefono != 0 && _titular.Direccion != "" && _titular.Correo != "" )
         {
-            Console.WriteLine(_titular.Nombre + " asd");
-            ModificarTitularUseCase.Ejecutar(_titular);
-            Navegador.NavigateTo("Titulares");
+            if ( EsTitularUnicoUseCase.Ejecutar(_titular) == null)
+            {
+                ModificarTitularUseCase.Ejecutar(_titular);
+                Navegador.NavigateTo("Titulares");
+
+            }else
+                ElDniYaExiste();
+       
         } else
         {
             DebeCompletarTodosLosDatos();
@@ -71,6 +79,12 @@
     private void DebeCompletarTodosLosDatos()
     {
         dialogoError.Mensaje = $"Debe completar todos los campos";        
+        dialogoError.Mostrar();
+    }
+
+        private void ElDniYaExiste()
+    {
+        dialogoError.Mensaje = $"El DNI ya se encuentra registrado";        
         dialogoError.Mostrar();
     }
 

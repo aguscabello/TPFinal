@@ -1,0 +1,107 @@
+@page "/Poliza/{Id:int?}"
+@inject ObtenerPolizaUseCase ObtenerPolizaUseCase
+@inject ModificarPolizaUseCase ModificarPolizaUseCase
+@inject EsPolizaUnicaUseCase EsPolizaUnicaUseCase
+@inject NavigationManager Navegador
+
+<DialogoError @ref=dialogoError/>
+
+<div style="margin: 25px; margin-left: 0;">
+    <span>Modificar Poliza</span>
+    <table class="table">
+        <thead>
+            <tr>
+                <th >ValorAsegurado</th>
+                <th >Franquicia</th >
+                <th >Cobertura</th>
+                <th >Fecha Inicio</th>
+                <th >Fecha Fin</th>
+                <th >Accion</th >            
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            <tr>
+                <td style="max-width: 100px"><input type="number"      placeholder="Valor Asegurado"       @bind="p.ValorAsegurado" style="max-width: 100%;" /></td>
+                <td style="max-width: 100px"><input type="text"      placeholder="Franquicia"       @bind="p.Franquicia" style="max-width: 100%;" /></td>
+                <td style="max-width: 100px">
+                    <select type="text"    @bind="p.Cobertura" style="max-width: 100%;" >   
+                          @foreach (var cober in coberturas)
+                        {
+                            <option value="@cober">@cober</option>
+                        }
+                    </select>
+                </td>
+                <td style="max-width: 100px"><input type="text"    placeholder="Inicio"        @bind="p.FechaInicio" style="max-width: 100%;" />    </td>
+                <td style="max-width: 100px"><input type="text"    placeholder="Fin"        @bind="p.FechaFin" style="max-width: 100%;" />    </td>        
+                <td><button @onclick="Modificar">Modificar</button> </td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+@code 
+{
+    Poliza p = new Poliza();
+    [Parameter]  public int? Id { get; set; }
+ 
+    List<string> coberturas = new List<string>();
+    DialogoError   dialogoError = null!;
+    protected override void OnParametersSet()
+    {
+        if (Id != null)
+        {
+           
+            var PolizaHallado = ObtenerPolizaUseCase.Ejecutar(Id.Value);
+            if (PolizaHallado != null)
+            {
+                p = PolizaHallado;
+            }
+        }
+
+        coberturas.Add("Responsabilidad Civil");
+        coberturas.Add("Todo Riesgo");
+    }
+    DateTime inicial = new DateTime(2000,1,1);
+
+    void Modificar()
+    {
+        if (p.ValorAsegurado != 0 && p.Franquicia != null && p.Cobertura != null && !p.FechaInicio.Equals(inicial) && !p.FechaFin.Equals(inicial) )
+        {  
+
+            if (EsPolizaUnicaUseCase.Ejecutar(p))               
+            {          
+                       
+                ModificarPolizaUseCase.Ejecutar(p);
+                Navegador.NavigateTo("Polizas");
+            }else
+            {
+                FechaSuperpuesta();
+            }
+
+        } else
+        {
+            DebeCompletarTodosLosDatos();
+        }
+        
+    }
+
+    private void DebeCompletarTodosLosDatos()
+    {
+        dialogoError.Mensaje = $"Debe completar todos los campos";        
+        dialogoError.Mostrar();
+    }
+
+    private void FechaSuperpuesta()
+    {
+        dialogoError.Mensaje = $"La fecha seleccionada se superpone con la fecha de otra poliza del auto seleccionado";        
+        dialogoError.Mostrar();
+    }
+
+
+
+}

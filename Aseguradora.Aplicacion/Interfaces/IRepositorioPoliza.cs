@@ -10,5 +10,5 @@ public interface IRepositorioPoliza
 
     Poliza? ObtenerPoliza (int id);
 
-    Boolean EsPolizaUnica (DateTime inicio, DateTime final, int vehiculoId);
+    Boolean EsPolizaUnica (Poliza poliza);
 }

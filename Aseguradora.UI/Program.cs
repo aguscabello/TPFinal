@@ -30,6 +30,7 @@ builder.Services.AddTransient<ListarTitularesUseCase>();
 builder.Services.AddTransient<EliminarTitularUseCase>();
 builder.Services.AddTransient<ModificarTitularUseCase>();
 builder.Services.AddTransient<ObtenerTitularUseCase>();
+builder.Services.AddTransient<EsTitularUnicoUseCase>();
 builder.Services.AddScoped<IRepositorioTitular, RepositorioTitular>();
 
 builder.Services.AddTransient<AgregarVehiculoUseCase>();
