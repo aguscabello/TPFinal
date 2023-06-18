@@ -91,7 +91,7 @@ public class RepositorioSiniestro : IRepositorioSiniestro
             {
                 if (ocurrencia >= poliza.FechaInicio && ocurrencia <= poliza.FechaFin)
                 {
-                     Poliza polizaActiva = context.Polizas.Where(p => p.Id == polizaId).SingleOrDefault();
+                     Poliza? polizaActiva = context.Polizas.Where(p => p.Id == polizaId).SingleOrDefault();
                      if (polizaActiva != null && polizaActiva.Id == poliza.Id)
                         {
                                 return true;

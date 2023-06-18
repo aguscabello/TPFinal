@@ -1174,19 +1174,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cabel\\.nuget\\packages\\": {}
+    "/home/mark/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cabel\\TPFinal\\Aseguradora.UI\\Aseguradora.UI.csproj",
+      "projectUniqueName": "/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Aseguradora.UI.csproj",
       "projectName": "Aseguradora.UI",
-      "projectPath": "C:\\Users\\cabel\\TPFinal\\Aseguradora.UI\\Aseguradora.UI.csproj",
-      "packagesPath": "C:\\Users\\cabel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cabel\\TPFinal\\Aseguradora.UI\\obj\\",
+      "projectPath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Aseguradora.UI.csproj",
+      "packagesPath": "/home/mark/.nuget/packages/",
+      "outputPath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cabel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/mark/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -1198,11 +1198,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\cabel\\TPFinal\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj": {
-              "projectPath": "C:\\Users\\cabel\\TPFinal\\Aseguradora.Aplicacion\\Aseguradora.Aplicacion.csproj"
+            "/home/mark/Escritorio/code/TPFinal/Aseguradora.Aplicacion/Aseguradora.Aplicacion.csproj": {
+              "projectPath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.Aplicacion/Aseguradora.Aplicacion.csproj"
             },
-            "C:\\Users\\cabel\\TPFinal\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj": {
-              "projectPath": "C:\\Users\\cabel\\TPFinal\\Aseguradora.Repositorios\\Aseguradora.Repositorios.csproj"
+            "/home/mark/Escritorio/code/TPFinal/Aseguradora.Repositorios/Aseguradora.Repositorios.csproj": {
+              "projectPath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.Repositorios/Aseguradora.Repositorios.csproj"
             }
           }
         }
@@ -1235,7 +1235,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.107/RuntimeIdentifierGraph.json"
       }
     }
   }
