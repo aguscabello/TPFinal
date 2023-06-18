@@ -17,7 +17,7 @@
 <h2> Titulares </h2>
 
 <div style="margin: 25px; margin-left: 0;">    
-    <span>Agregar Titular</span>
+    <h4>Agregar Titular</h4>
     <table class="table">
    
         <thead>
@@ -55,7 +55,7 @@
 else
 {
     
-    <span>Listado de Titulares</span>
+    <h4>Listado de Titulares</h4>
     <DialogoConfirmacion @ref=dialogoConfirmacion />
     
     <table class="table">
@@ -110,11 +110,11 @@ else
 
     void Agregar()
     {
-        if (t.Nombre != null && t.Apellido != null && t.Dni != 0 && t.Telefono != 0 && t.Direccion != null && t.Correo != null )
+        if (t.Nombre != "" && t.Apellido != "" && t.Dni != 0 && t.Telefono != 0 && t.Direccion != "" && t.Correo != "" )
         {
             if (t.Dni != 0){
                 var a = ObtenerTitularUseCase.Ejecutar(t.Dni);                
-                if (a == null)                
+                if (a == null)  
                 {            
                     
                     AgregarTitularUseCase.Ejecutar(t); 

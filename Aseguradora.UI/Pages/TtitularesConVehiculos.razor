@@ -1,0 +1,100 @@
+@page "/TitularesYVehiculos"
+@inject NavigationManager Navegador;
+@inject IJSRuntime JsRuntime;
+@inject TitularesConVehiculosUseCase TitularesConVehiculosUseCase
+
+<PageTitle>TitularesConVehiculos</PageTitle>
+
+<h2> Titulares y sus vehiculos </h2>
+
+
+@if (titulares == null)
+{
+    <p><em>Cargando Titulares...</em></p>
+}
+else
+{   
+     @foreach (var t in titulares)
+    { 
+
+        <span>Titular</span>
+       
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Dni</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+                    <th>Correo</th>  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>        
+                    <td>@t.Id</td>
+                    <td>@t.Nombre</td>
+                    <td>@t.Apellido</td>
+                    <td>@t.Dni</td>
+                    <td>@t.Telefono</td>
+                    <td>@t.Direccion</td>
+                    <td>@t.Correo</td>  
+                </tr>
+            </tbody>
+        </table>
+    
+        <span>Vehiculos</span>
+        if (t.Vehiculos != null)
+        {
+           
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Dominio</th>
+                        <th>Marca</th>
+                        <th>Anio</th>
+                        <th>TitularId</th>
+                            
+                    </tr>
+                </thead>
+                @foreach (var v in t.Vehiculos)
+                {
+                        <tbody>
+                            <tr>                           
+                                <td>@v.Id</td>
+                                <td>@v.Dominio</td>
+                                <td>@v.Marca</td>
+                                <td>@v.Anio</td>
+                                <td>@v.TitularId</td>   
+                            </tr>
+                        </tbody>
+                    
+                }
+            </table>
+    }
+        <br>
+    }
+   
+  
+}
+
+
+
+
+
+
+@code 
+{
+    List<Titular>? titulares;
+
+    Titular t = new Titular();
+    Vehiculo v = new Vehiculo();
+
+    protected override void OnInitialized()
+    {
+        titulares = TitularesConVehiculosUseCase.Ejecutar();
+       
+    }
+}

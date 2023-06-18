@@ -62,6 +62,19 @@ public class RepositorioTercero : IRepositorioTercero
 
     }
 
+        public Boolean EsTerceroUnico(Tercero tercero)
+    {
+        using (var context = new AseguradoraContext())
+        {
+            var t = context.Terceros.Where(t => t.Dni == tercero.Dni).Where(t => t.Id != tercero.Id).SingleOrDefault();
+            if (t == null){
+                return true;
+            }
+            return false;
+        }
+
+    }
+
     public void EliminarTercero(int id)
     {
         using (var context = new AseguradoraContext())

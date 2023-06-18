@@ -16,7 +16,7 @@
 
 <h2> Siniestros </h2>
 <div style="margin: 25px; margin-left: 0;">
-    <span>Agregar Siniestro</span>
+    <h4>Agregar Siniestro</h4>
     <table class="table">
          <thead>
             <tr>               
@@ -30,8 +30,9 @@
         </thead>
         <tbody>
             <tr>
-    
-                <td style="max-width: 120px"><input type="text"      placeholder="FechaIngreso"       @bind="s.FechaIngreso" style="max-width: 100%;" /></td>
+                
+             
+                <td style="max-width: 120px"><span type="text"   style="max-width: 100%;" >  @s.FechaIngreso </span></td>
                 <td style="max-width: 120px"><input type="text"      placeholder="FechaOcurrencia"       @bind="s.FechaOcurrencia" style="max-width: 100%;" /></td>
                 <td style="max-width: 120px"><input type="text"      placeholder="Direccion"        @bind="s.Direccion" style="max-width: 100%;" />    </td>
                 <td style="max-width: 120px"><input type="text"      placeholder="Descripcion"        @bind="s.Descripcion" style="max-width: 100%;" />    </td>
@@ -58,7 +59,7 @@
 else
 {
     
-    <span>Listado de Siniestros</span>
+    <h4>Listado de Siniestros</h4>
     <DialogoConfirmacion @ref=dialogo />
     <table class="table">
         <thead>
@@ -103,9 +104,9 @@ else
 
     List<Siniestro>? siniestros = new List<Siniestro>();
     List<int> opciones = new List<int>();
-    protected override void OnInitialized()
-    {
-        DateTime fechaActual = DateTime.Now;
+        
+    protected override void OnInitialized()    {
+    
 
         siniestros = ListarSiniestrosUseCase.Ejecutar();
        
@@ -116,16 +117,19 @@ else
             opciones.Add(p.Id);
         }
         
+       
+        
     }
     
     Siniestro s = new Siniestro();
+    
 
   
     DateTime inicial = new DateTime(2000,1,1);
     
     void Agregar()
     {
-        if (!s.FechaIngreso.Equals(inicial) && !s.FechaOcurrencia.Equals(inicial) && s.Descripcion != null && s.Direccion != null && s.PolizaId != 0 )
+        if (!s.FechaIngreso.Equals(inicial) && !s.FechaOcurrencia.Equals(inicial) && s.Descripcion != "" && s.Direccion != "" && s.PolizaId != 0 )
         {            
             if (VerificarCoberturaUseCase.Ejecutar(s.FechaOcurrencia,s.PolizaId)){                                   
                 AgregarSiniestroUseCase.Ejecutar(s);         

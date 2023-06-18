@@ -9,8 +9,8 @@ public class Poliza
 
     //cobertura : Responsabilidad Civil o Todo Riesgo
     public string Cobertura{get;set;} ="";
-    public DateTime FechaInicio{get;set;} = new DateTime (1900,1,1);
-    public DateTime FechaFin{get;set;}  = new DateTime (1900,1,1);
+    public DateTime FechaInicio{get;set;} = new DateTime (2000,1,1);
+    public DateTime FechaFin{get;set;}  = new DateTime (2000,1,1);
     
 
     public List<Siniestro>? Siniestros {get;set;}

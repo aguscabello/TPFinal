@@ -11,7 +11,7 @@
 
 @code{
     private bool visible = false;
-    [Parameter]
+ 
     public string Mensaje {get;set;}="";
     public void Mostrar()
     {
@@ -23,7 +23,6 @@
         visible=false;
     }
 
-    [Parameter]
     public EventCallback OnConfirmado{get;set;}
     void CerrarYConfirmar()
     {

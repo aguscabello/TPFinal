@@ -8,5 +8,7 @@ public interface IRepositorioTitular
     void EliminarTitular(int id);    
     Titular? ObtenerTitular(int dni);
 
-    Titular? EsTitularUnico (Titular titular);
+    Boolean EsTitularUnico (Titular titular);
+
+    List<Titular>? TitularesConVehiculos();
 }

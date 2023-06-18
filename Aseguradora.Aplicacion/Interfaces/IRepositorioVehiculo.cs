@@ -6,9 +6,11 @@ public interface IRepositorioVehiculo
     void EliminarVehiculo(int id);
     void ModificarVehiculo(Vehiculo vehiculo);
     List<Vehiculo> ListarVehiculos();
+   
+
     Vehiculo? ObtenerVehiculo(int id);
 
-    Vehiculo? EsUnico(string dominio);
+    Boolean EsVehiculoUnico(Vehiculo vehiculo);
    
     
 }

@@ -7,7 +7,7 @@
 <DialogoError @ref=dialogoError/>
 
 <div style="margin: 25px; margin-left: 0;">
-    <span>Modificar Poliza</span>
+    <h4>Modificar Poliza</h4>
     <table class="table">
         <thead>
             <tr>
@@ -70,7 +70,7 @@
 
     void Modificar()
     {
-        if (p.ValorAsegurado != 0 && p.Franquicia != null && p.Cobertura != null && !p.FechaInicio.Equals(inicial) && !p.FechaFin.Equals(inicial) )
+        if (p.ValorAsegurado != 0 && p.Franquicia != "" && p.Cobertura != "" && !p.FechaInicio.Equals(inicial) && !p.FechaFin.Equals(inicial) )
         {  
 
             if (EsPolizaUnicaUseCase.Ejecutar(p))               

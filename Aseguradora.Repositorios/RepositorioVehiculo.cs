@@ -35,6 +35,7 @@ public class RepositorioVehiculo : IRepositorioVehiculo
             {
                  vehiculoN.Dominio = vehiculo.Dominio;
                  vehiculoN.Marca = vehiculo.Marca;
+                 vehiculoN.Dominio = vehiculo.Dominio;
                  vehiculoN.Anio = vehiculo.Anio;
                  vehiculo.TitularId= vehiculo.TitularId;
                  context.SaveChanges();
@@ -45,33 +46,33 @@ public class RepositorioVehiculo : IRepositorioVehiculo
 
     }
 
-
     public Vehiculo? ObtenerVehiculo(int id)
     {
         using (var context = new AseguradoraContext())
         {
-            var t = context.Vehiculos.Where(t => t.Id== id).SingleOrDefault();
-            if (t == null){
+            var v = context.Vehiculos.Where(v => v.Id == id).SingleOrDefault();
+            if (v == null){
                 return null;
             }
-            return t;
+            return v;
         }
        
     }
-
-
-        public Vehiculo? EsUnico(string dominio)
+    public Boolean EsVehiculoUnico(Vehiculo vehiculo)
     {
         using (var context = new AseguradoraContext())
         {
-            var t = context.Vehiculos.Where(t => t.Dominio == dominio).SingleOrDefault();
-            if (t == null){
-                return null;
+            var v= context.Vehiculos.Where(v => v.Dominio == vehiculo.Dominio).Where(v => v.Id != vehiculo.Id).SingleOrDefault();
+            if (v == null){
+                return true;
             }
-            return t;
+            return false;
         }
        
     }
+
+
+   
 
     public void EliminarVehiculo(int id)
     {

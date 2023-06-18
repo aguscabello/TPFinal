@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Aseguradora.Aplicacion.Interfaces;
 using Aseguradora.Aplicacion.Entidades;
 namespace Aseguradora.Repositorios;
@@ -63,15 +64,15 @@ public class RepositorioTitular : IRepositorioTitular
        
     }
 
-        public Titular? EsTitularUnico(Titular titular)
+        public Boolean EsTitularUnico(Titular titular)
     {
         using (var context = new AseguradoraContext())
         {      
             var t = context.Titulares.Where(t => t.Dni == titular.Dni).Where(t => t.Id != titular.Id).SingleOrDefault();
             if (t == null){
-                return null;
+                return true;
             }
-            return t;
+            return false;
         }
        
     }
@@ -89,5 +90,16 @@ public class RepositorioTitular : IRepositorioTitular
           
         }
 
+    }
+
+    public List<Titular>? TitularesConVehiculos()
+    {
+        using (var context = new AseguradoraContext())
+        {
+            List<Titular> lista =  context.Titulares.Include(t=>t.Vehiculos).ToList();
+            return lista;
+
+        }
+        
     }
 }

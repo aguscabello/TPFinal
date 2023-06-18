@@ -26,22 +26,27 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 
 // DICONTAINTER
+
+//TITULARES
 builder.Services.AddTransient<AgregarTitularUseCase>();
 builder.Services.AddTransient<ListarTitularesUseCase>();
 builder.Services.AddTransient<EliminarTitularUseCase>();
 builder.Services.AddTransient<ModificarTitularUseCase>();
 builder.Services.AddTransient<ObtenerTitularUseCase>();
 builder.Services.AddTransient<EsTitularUnicoUseCase>();
+builder.Services.AddTransient<TitularesConVehiculosUseCase>();
 builder.Services.AddScoped<IRepositorioTitular, RepositorioTitular>();
 
+//VEHICULOS
 builder.Services.AddTransient<AgregarVehiculoUseCase>();
 builder.Services.AddTransient<ListarVehiculosUseCase>();
 builder.Services.AddTransient<EliminarVehiculoUseCase>();
 builder.Services.AddTransient<ModificarVehiculoUseCase>();
 builder.Services.AddTransient<ObtenerVehiculoUseCase>();
-builder.Services.AddTransient<EsUnicoUseCase>();
+builder.Services.AddTransient<EsVehiculoUnicoUseCase>();
 builder.Services.AddScoped<IRepositorioVehiculo, RepositorioVehiculo>();
 
+//POLIZAS
 builder.Services.AddTransient<AgregarPolizaUseCase>();
 builder.Services.AddTransient<ListarPolizasUseCase>();
 builder.Services.AddTransient<EliminarPolizaUseCase>();
@@ -65,6 +70,7 @@ builder.Services.AddTransient<ListarTercerosUseCase>();
 builder.Services.AddTransient<EliminarTerceroUseCase>();
 builder.Services.AddTransient<ModificarTerceroUseCase>();
 builder.Services.AddTransient<ObtenerTerceroUseCase>();
+builder.Services.AddTransient<EsTerceroUnicoUseCase>();
 builder.Services.AddScoped<IRepositorioTercero, RepositorioTercero>();
 
 

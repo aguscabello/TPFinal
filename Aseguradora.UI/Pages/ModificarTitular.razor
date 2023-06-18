@@ -7,7 +7,7 @@
 <DialogoError @ref=dialogoError/>
 
 <div style="margin: 25px; margin-left: 0;">
-    <span>Modificar Titular</span>
+    <h4>Modificar Titular</h4>
     <table class="table">
         <thead>
             <tr>
@@ -24,12 +24,12 @@
         <tbody>
         
             <tr>
-                <td><input type="text"      placeholder="Nombre"       @bind="_titular.Nombre"  /></td>
-                <td><input type="text"      placeholder="Apellido"     @bind="_titular.Apellido"  /></td>  
-                <td><input type="text"      placeholder="Dni"          @bind="_titular.Dni"  /></td>    
-                <td><input type="number"    placeholder="Telefono"     @bind="_titular.Telefono"  /></td>
-                <td><input type="text"      placeholder="Direccion"    @bind="_titular.Direccion" /></td>
-                <td><input type="text"      placeholder="Correo"       @bind="_titular.Correo"  /></td>
+                <td style="max-width: 120px"><input type="text"      placeholder="Nombre"       @bind="_titular.Nombre"  /></td>
+                <td style="max-width: 120px"><input type="text"      placeholder="Apellido"     @bind="_titular.Apellido"  /></td>  
+                <td style="max-width: 120px"><input type="text"      placeholder="Dni"          @bind="_titular.Dni"  /></td>    
+                <td style="max-width: 120px"><input type="number"    placeholder="Telefono"     @bind="_titular.Telefono"  /></td>
+                <td style="max-width: 120px"><input type="text"      placeholder="Direccion"    @bind="_titular.Direccion" /></td>
+                <td style="max-width: 120px"><input type="text"      placeholder="Correo"       @bind="_titular.Correo"  /></td>
                 <td><button @onclick="Modificar">Modificar</button> </td> 
             </tr>
         </tbody>
@@ -61,7 +61,7 @@
     {
         if (_titular.Nombre != "" && _titular.Apellido != "" && _titular.Dni != 0 && _titular.Telefono != 0 && _titular.Direccion != "" && _titular.Correo != "" )
         {
-            if ( EsTitularUnicoUseCase.Ejecutar(_titular) == null)
+            if (EsTitularUnicoUseCase.Ejecutar(_titular))
             {
                 ModificarTitularUseCase.Ejecutar(_titular);
                 Navegador.NavigateTo("Titulares");

@@ -4,7 +4,7 @@ public class Siniestro
 {
     public int Id {get;set;}
     public int PolizaId{get;set;}
-    public DateTime FechaIngreso{get;set;} = new DateTime (2000,1,1);
+    public DateTime FechaIngreso{get;set;} = DateTime.Now;
     public DateTime FechaOcurrencia {get;set;} = new DateTime (2000,1,1);
     public string  Direccion {get;set;} ="";
     public string Descripcion {get;set;} ="";

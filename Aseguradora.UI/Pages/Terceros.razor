@@ -5,6 +5,7 @@
 @inject ListarTercerosUseCase ListarTercerosUseCase
 @inject EliminarTerceroUseCase EliminarTerceroUseCase
 @inject ObtenerTerceroUseCase ObtenerTerceroUseCase
+@inject EsTerceroUnicoUseCase EsTerceroUnicoUseCase 
 @inject ListarSiniestrosUseCase ListarSiniestrosUseCase
 
  
@@ -16,7 +17,7 @@
 
 <h2> Terceros </h2>
 <div style="margin: 25px; margin-left: 0;">
-    <span>Agregar Tercero</span>
+    <h4>Agregar Tercero</h4>
     <table class="table">
          <thead>
             <tr>               
@@ -59,7 +60,7 @@
     }
     else
     {
-        <span>Listado de Terceros</span>
+        <h4>Listado de Terceros</h4>
         <DialogoConfirmacion @ref=dialogoConfirmacion />
         <table class="table">
             <thead>
@@ -124,11 +125,10 @@
 
     void Agregar()
     {
-        if (t.Nombre != null && t.Apellido != null && t.Dni != 0 && t.Telefono != 0 && t.NombreAseguradora != null && t.SiniestroId != 0)
+        if (t.Nombre != "" && t.Apellido != "" && t.Dni != 0 && t.Telefono != 0 && t.NombreAseguradora != "" && t.SiniestroId != 0)
            {            
-             if (t.Dni != 0){
-                var a = ObtenerTerceroUseCase.Ejecutar(t.Dni);                
-                if (a == null)                
+             if (t.Dni != 0){                     
+                if (EsTerceroUnicoUseCase.Ejecutar(t))                
                 {            
                     
                     AgregarTerceroUseCase.Ejecutar(t); 
@@ -145,8 +145,7 @@
     }
 
     void ModificarTercero(Tercero t)
-    {
-        Console.WriteLine("Entra");
+    {        
         Navegador.NavigateTo($"Tercero/{t.Id}");
     }
 

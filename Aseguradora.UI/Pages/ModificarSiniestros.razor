@@ -7,7 +7,7 @@
 <DialogoError @ref=dialogoError/>
 
 <div style="margin: 25px; margin-left: 0;">
-    <span>Modificar Siniestro</span>
+    <h4>Modificar Siniestro</h4>
     <table class="table">
         <thead>
             <tr>
@@ -22,7 +22,7 @@
         <tbody>
         
             <tr>
-                <td><input type="text"      placeholder="FechaIngreso"       @bind="s.FechaIngreso"  /></td>
+                <td><span type="text" > @s.FechaIngreso</span></td>
                 <td><input type="text"      placeholder="FechaOcurrencia"       @bind="s.FechaOcurrencia"  /></td>   
                 <td><input type="text"      placeholder="Direccion"       @bind="s.Direccion"  /></td> 
                 <td><input type="text"      placeholder="Descripcion"       @bind="s.Descripcion"  /></td>        
@@ -58,7 +58,7 @@
     DateTime inicial = new DateTime(2000,1,1);
     void Modificar()
     {
-        if (!s.FechaIngreso.Equals(inicial) && !s.FechaOcurrencia.Equals(inicial) && s.Direccion != " " && s.Descripcion != " " )
+        if (!s.FechaIngreso.Equals(inicial) && !s.FechaOcurrencia.Equals(inicial) && s.Direccion != "" && s.Descripcion != "" )
         {           
             if(VerificarCoberturaUseCase.Ejecutar(s.FechaOcurrencia,s.PolizaId))
             {

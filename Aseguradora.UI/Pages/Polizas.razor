@@ -17,7 +17,7 @@
 
 <h2> Polizas </h2>
 <div style="margin: 25px; margin-left: 0;">
-    <span>Agregar Poliza</span>
+    <h4>Agregar Poliza</h4>
     <table class="table">
          <thead>
             <tr>               
@@ -68,7 +68,7 @@
 else
 {
     
-    <span>Listado de Polizas</span>
+    <h4>Listado de Polizas</h4>
     <DialogoConfirmacion @ref=dialogo />
     <table class="table">
         <thead>
@@ -136,8 +136,8 @@ else
   
     void Agregar()
     {
-        //que pasa si agrego una id de titular que no existe.
-        if (p.ValorAsegurado != 0 && p.Franquicia != null && p.Cobertura != null && p.VehiculoId != 0 && !p.FechaInicio.Equals(inicial) && !p.FechaFin.Equals(inicial))
+        
+        if (p.ValorAsegurado != 0 && p.Franquicia != "" && p.Cobertura != null && p.VehiculoId != 0 && !p.FechaInicio.Equals(inicial) && !p.FechaFin.Equals(inicial))
         {            
             if (EsPolizaUnicaUseCase.Ejecutar(p))               
             {          

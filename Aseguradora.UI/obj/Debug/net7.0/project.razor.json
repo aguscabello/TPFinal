@@ -13,102 +13,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 1356757182,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Vehiculos",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Vehiculos"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Vehiculos",
-          "Common.TypeNameIdentifier": "Vehiculos",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 849541979,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Vehiculos",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Aseguradora.UI.Pages.Vehiculos"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Vehiculos",
-          "Common.TypeNameIdentifier": "Vehiculos",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -515158862,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.ModificarTercero",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ModificarTercero"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "System.Int32?",
-            "Metadata": {
-              "Common.PropertyName": "Id",
-              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
-            }
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.ModificarTercero",
-          "Common.TypeNameIdentifier": "ModificarTercero",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 770463183,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.ModificarTercero",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Aseguradora.UI.Pages.ModificarTercero"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "System.Int32?",
-            "Metadata": {
-              "Common.PropertyName": "Id",
-              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
-            }
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.ModificarTercero",
-          "Common.TypeNameIdentifier": "ModificarTercero",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
         "HashCode": -1923768542,
         "Kind": "Components.Component",
         "Name": "Aseguradora.UI.Pages.Index",
@@ -146,133 +50,111 @@
         }
       },
       {
-        "HashCode": -1656141312,
+        "HashCode": -726415323,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.ModificarSiniestros",
+        "Name": "Aseguradora.UI.Pages.Titulares",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "ModificarSiniestros"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "System.Int32?",
-            "Metadata": {
-              "Common.PropertyName": "Id",
-              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
-            }
+            "TagName": "Titulares"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.ModificarSiniestros",
-          "Common.TypeNameIdentifier": "ModificarSiniestros",
+          "Common.TypeName": "Aseguradora.UI.Pages.Titulares",
+          "Common.TypeNameIdentifier": "Titulares",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 2093346614,
+        "HashCode": -177883123,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.ModificarSiniestros",
+        "Name": "Aseguradora.UI.Pages.Titulares",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Aseguradora.UI.Pages.ModificarSiniestros"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "System.Int32?",
-            "Metadata": {
-              "Common.PropertyName": "Id",
-              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
-            }
+            "TagName": "Aseguradora.UI.Pages.Titulares"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.ModificarSiniestros",
-          "Common.TypeNameIdentifier": "ModificarSiniestros",
+          "Common.TypeName": "Aseguradora.UI.Pages.Titulares",
+          "Common.TypeNameIdentifier": "Titulares",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": -2065769337,
+        "HashCode": 1356757182,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Terceros",
+        "Name": "Aseguradora.UI.Pages.Vehiculos",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Terceros"
+            "TagName": "Vehiculos"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Terceros",
-          "Common.TypeNameIdentifier": "Terceros",
+          "Common.TypeName": "Aseguradora.UI.Pages.Vehiculos",
+          "Common.TypeNameIdentifier": "Vehiculos",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 1716934961,
+        "HashCode": 849541979,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Terceros",
+        "Name": "Aseguradora.UI.Pages.Vehiculos",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Aseguradora.UI.Pages.Terceros"
+            "TagName": "Aseguradora.UI.Pages.Vehiculos"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Terceros",
-          "Common.TypeNameIdentifier": "Terceros",
+          "Common.TypeName": "Aseguradora.UI.Pages.Vehiculos",
+          "Common.TypeNameIdentifier": "Vehiculos",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 1969219867,
+        "HashCode": -2115392857,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.FetchData",
+        "Name": "Aseguradora.UI.Pages.TtitularesConVehiculos",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "FetchData"
+            "TagName": "TtitularesConVehiculos"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.FetchData",
-          "Common.TypeNameIdentifier": "FetchData",
+          "Common.TypeName": "Aseguradora.UI.Pages.TtitularesConVehiculos",
+          "Common.TypeNameIdentifier": "TtitularesConVehiculos",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 135641792,
+        "HashCode": -160451273,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.FetchData",
+        "Name": "Aseguradora.UI.Pages.TtitularesConVehiculos",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Aseguradora.UI.Pages.FetchData"
+            "TagName": "Aseguradora.UI.Pages.TtitularesConVehiculos"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.FetchData",
-          "Common.TypeNameIdentifier": "FetchData",
+          "Common.TypeName": "Aseguradora.UI.Pages.TtitularesConVehiculos",
+          "Common.TypeNameIdentifier": "TtitularesConVehiculos",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
@@ -338,14 +220,14 @@
         }
       },
       {
-        "HashCode": 402155010,
+        "HashCode": -1656141312,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.ModificarVehiculo",
+        "Name": "Aseguradora.UI.Pages.ModificarSiniestros",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "ModificarVehiculo"
+            "TagName": "ModificarSiniestros"
           }
         ],
         "BoundAttributes": [
@@ -360,21 +242,21 @@
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.ModificarVehiculo",
-          "Common.TypeNameIdentifier": "ModificarVehiculo",
+          "Common.TypeName": "Aseguradora.UI.Pages.ModificarSiniestros",
+          "Common.TypeNameIdentifier": "ModificarSiniestros",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 108744762,
+        "HashCode": 2093346614,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.ModificarVehiculo",
+        "Name": "Aseguradora.UI.Pages.ModificarSiniestros",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Aseguradora.UI.Pages.ModificarVehiculo"
+            "TagName": "Aseguradora.UI.Pages.ModificarSiniestros"
           }
         ],
         "BoundAttributes": [
@@ -389,82 +271,67 @@
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.ModificarVehiculo",
-          "Common.TypeNameIdentifier": "ModificarVehiculo",
+          "Common.TypeName": "Aseguradora.UI.Pages.ModificarSiniestros",
+          "Common.TypeNameIdentifier": "ModificarSiniestros",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 521635948,
+        "HashCode": -515158862,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Counter",
+        "Name": "Aseguradora.UI.Pages.ModificarTercero",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Counter"
+            "TagName": "ModificarTercero"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id",
+              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
+            }
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Counter",
-          "Common.TypeNameIdentifier": "Counter",
+          "Common.TypeName": "Aseguradora.UI.Pages.ModificarTercero",
+          "Common.TypeNameIdentifier": "ModificarTercero",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": -2019941393,
+        "HashCode": 770463183,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Counter",
+        "Name": "Aseguradora.UI.Pages.ModificarTercero",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Aseguradora.UI.Pages.Counter"
+            "TagName": "Aseguradora.UI.Pages.ModificarTercero"
           }
         ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Counter",
-          "Common.TypeNameIdentifier": "Counter",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 979762390,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Polizas",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
+        "BoundAttributes": [
           {
-            "TagName": "Polizas"
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id",
+              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
+            }
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Polizas",
-          "Common.TypeNameIdentifier": "Polizas",
-          "Common.TypeNamespace": "Aseguradora.UI.Pages",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 1495907278,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Polizas",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Aseguradora.UI.Pages.Polizas"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Polizas",
-          "Common.TypeNameIdentifier": "Polizas",
+          "Common.TypeName": "Aseguradora.UI.Pages.ModificarTercero",
+          "Common.TypeNameIdentifier": "ModificarTercero",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
@@ -530,6 +397,65 @@
         }
       },
       {
+        "HashCode": 402155010,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Pages.ModificarVehiculo",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ModificarVehiculo"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id",
+              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
+            }
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Pages.ModificarVehiculo",
+          "Common.TypeNameIdentifier": "ModificarVehiculo",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 108744762,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Pages.ModificarVehiculo",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Aseguradora.UI.Pages.ModificarVehiculo"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id",
+              "Common.GloballyQualifiedTypeName": "global::System.Int32?"
+            }
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Pages.ModificarVehiculo",
+          "Common.TypeNameIdentifier": "ModificarVehiculo",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
         "HashCode": 826731979,
         "Kind": "Components.Component",
         "Name": "Aseguradora.UI.Pages.Siniestros",
@@ -567,196 +493,112 @@
         }
       },
       {
-        "HashCode": -726415323,
+        "HashCode": 979762390,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Titulares",
+        "Name": "Aseguradora.UI.Pages.Polizas",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Titulares"
+            "TagName": "Polizas"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Titulares",
-          "Common.TypeNameIdentifier": "Titulares",
+          "Common.TypeName": "Aseguradora.UI.Pages.Polizas",
+          "Common.TypeNameIdentifier": "Polizas",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": -177883123,
+        "HashCode": 1495907278,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Pages.Titulares",
+        "Name": "Aseguradora.UI.Pages.Polizas",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Aseguradora.UI.Pages.Titulares"
+            "TagName": "Aseguradora.UI.Pages.Polizas"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Pages.Titulares",
-          "Common.TypeNameIdentifier": "Titulares",
+          "Common.TypeName": "Aseguradora.UI.Pages.Polizas",
+          "Common.TypeNameIdentifier": "Polizas",
           "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 292568902,
+        "HashCode": -2065769337,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Shared.DialogoError",
+        "Name": "Aseguradora.UI.Pages.Terceros",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "DialogoError"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Mensaje",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Mensaje",
-              "Common.GloballyQualifiedTypeName": "global::System.String"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnConfirmado",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback",
-            "Metadata": {
-              "Common.PropertyName": "OnConfirmado",
-              "Common.GloballyQualifiedTypeName": "global::Microsoft.AspNetCore.Components.EventCallback",
-              "Components.EventCallback": "True"
-            }
+            "TagName": "Terceros"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Shared.DialogoError",
-          "Common.TypeNameIdentifier": "DialogoError",
-          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Common.TypeName": "Aseguradora.UI.Pages.Terceros",
+          "Common.TypeNameIdentifier": "Terceros",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": -493654821,
+        "HashCode": 1716934961,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Shared.DialogoError",
+        "Name": "Aseguradora.UI.Pages.Terceros",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Aseguradora.UI.Shared.DialogoError"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Mensaje",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Mensaje",
-              "Common.GloballyQualifiedTypeName": "global::System.String"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnConfirmado",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback",
-            "Metadata": {
-              "Common.PropertyName": "OnConfirmado",
-              "Common.GloballyQualifiedTypeName": "global::Microsoft.AspNetCore.Components.EventCallback",
-              "Components.EventCallback": "True"
-            }
+            "TagName": "Aseguradora.UI.Pages.Terceros"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Shared.DialogoError",
-          "Common.TypeNameIdentifier": "DialogoError",
-          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Common.TypeName": "Aseguradora.UI.Pages.Terceros",
+          "Common.TypeNameIdentifier": "Terceros",
+          "Common.TypeNamespace": "Aseguradora.UI.Pages",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": -1808555574,
+        "HashCode": 637518080,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Shared.DialogoExito",
+        "Name": "Aseguradora.UI.App",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "DialogoExito"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Mensaje",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Mensaje",
-              "Common.GloballyQualifiedTypeName": "global::System.String"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnConfirmado",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback",
-            "Metadata": {
-              "Common.PropertyName": "OnConfirmado",
-              "Common.GloballyQualifiedTypeName": "global::Microsoft.AspNetCore.Components.EventCallback",
-              "Components.EventCallback": "True"
-            }
+            "TagName": "App"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Shared.DialogoExito",
-          "Common.TypeNameIdentifier": "DialogoExito",
-          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Common.TypeName": "Aseguradora.UI.App",
+          "Common.TypeNameIdentifier": "App",
+          "Common.TypeNamespace": "Aseguradora.UI",
           "Runtime.Name": "Components.IComponent"
         }
       },
       {
-        "HashCode": 401633870,
+        "HashCode": -1821373559,
         "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Shared.DialogoExito",
+        "Name": "Aseguradora.UI.App",
         "AssemblyName": "Aseguradora.UI",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Aseguradora.UI.Shared.DialogoExito"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Mensaje",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Mensaje",
-              "Common.GloballyQualifiedTypeName": "global::System.String"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnConfirmado",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback",
-            "Metadata": {
-              "Common.PropertyName": "OnConfirmado",
-              "Common.GloballyQualifiedTypeName": "global::Microsoft.AspNetCore.Components.EventCallback",
-              "Components.EventCallback": "True"
-            }
+            "TagName": "Aseguradora.UI.App"
           }
         ],
         "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Shared.DialogoExito",
-          "Common.TypeNameIdentifier": "DialogoExito",
-          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Common.TypeName": "Aseguradora.UI.App",
+          "Common.TypeNameIdentifier": "App",
+          "Common.TypeNamespace": "Aseguradora.UI",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
         }
@@ -815,6 +657,154 @@
         "Metadata": {
           "Common.TypeName": "Aseguradora.UI.Shared.SurveyPrompt",
           "Common.TypeNameIdentifier": "SurveyPrompt",
+          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -1742673481,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Shared.NavMenu",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Shared.NavMenu",
+          "Common.TypeNameIdentifier": "NavMenu",
+          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 427187260,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Shared.NavMenu",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Aseguradora.UI.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Shared.NavMenu",
+          "Common.TypeNameIdentifier": "NavMenu",
+          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -85568408,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Shared.DialogoConfirmacion",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DialogoConfirmacion"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Shared.DialogoConfirmacion",
+          "Common.TypeNameIdentifier": "DialogoConfirmacion",
+          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -1814149476,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Shared.DialogoConfirmacion",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Aseguradora.UI.Shared.DialogoConfirmacion"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Shared.DialogoConfirmacion",
+          "Common.TypeNameIdentifier": "DialogoConfirmacion",
+          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 16982743,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Shared.DialogoError",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DialogoError"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Shared.DialogoError",
+          "Common.TypeNameIdentifier": "DialogoError",
+          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": -433342825,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Shared.DialogoError",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Aseguradora.UI.Shared.DialogoError"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Shared.DialogoError",
+          "Common.TypeNameIdentifier": "DialogoError",
+          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 216234687,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Shared.DialogoExito",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DialogoExito"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Shared.DialogoExito",
+          "Common.TypeNameIdentifier": "DialogoExito",
+          "Common.TypeNamespace": "Aseguradora.UI.Shared",
+          "Runtime.Name": "Components.IComponent"
+        }
+      },
+      {
+        "HashCode": 29660074,
+        "Kind": "Components.Component",
+        "Name": "Aseguradora.UI.Shared.DialogoExito",
+        "AssemblyName": "Aseguradora.UI",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Aseguradora.UI.Shared.DialogoExito"
+          }
+        ],
+        "Metadata": {
+          "Common.TypeName": "Aseguradora.UI.Shared.DialogoExito",
+          "Common.TypeNameIdentifier": "DialogoExito",
           "Common.TypeNamespace": "Aseguradora.UI.Shared",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.IComponent"
@@ -924,159 +914,6 @@
           "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch",
           "Runtime.Name": "Components.None"
-        }
-      },
-      {
-        "HashCode": -140760393,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Shared.DialogoConfirmacion",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "DialogoConfirmacion"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Mensaje",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Mensaje",
-              "Common.GloballyQualifiedTypeName": "global::System.String"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnConfirmado",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback",
-            "Metadata": {
-              "Common.PropertyName": "OnConfirmado",
-              "Common.GloballyQualifiedTypeName": "global::Microsoft.AspNetCore.Components.EventCallback",
-              "Components.EventCallback": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Shared.DialogoConfirmacion",
-          "Common.TypeNameIdentifier": "DialogoConfirmacion",
-          "Common.TypeNamespace": "Aseguradora.UI.Shared",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 588408522,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Shared.DialogoConfirmacion",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Aseguradora.UI.Shared.DialogoConfirmacion"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Mensaje",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Mensaje",
-              "Common.GloballyQualifiedTypeName": "global::System.String"
-            }
-          },
-          {
-            "Kind": "Components.Component",
-            "Name": "OnConfirmado",
-            "TypeName": "Microsoft.AspNetCore.Components.EventCallback",
-            "Metadata": {
-              "Common.PropertyName": "OnConfirmado",
-              "Common.GloballyQualifiedTypeName": "global::Microsoft.AspNetCore.Components.EventCallback",
-              "Components.EventCallback": "True"
-            }
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Shared.DialogoConfirmacion",
-          "Common.TypeNameIdentifier": "DialogoConfirmacion",
-          "Common.TypeNamespace": "Aseguradora.UI.Shared",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -1742673481,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Shared.NavMenu",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Shared.NavMenu",
-          "Common.TypeNameIdentifier": "NavMenu",
-          "Common.TypeNamespace": "Aseguradora.UI.Shared",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 427187260,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.Shared.NavMenu",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Aseguradora.UI.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.Shared.NavMenu",
-          "Common.TypeNameIdentifier": "NavMenu",
-          "Common.TypeNamespace": "Aseguradora.UI.Shared",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": 637518080,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.App",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.App",
-          "Common.TypeNameIdentifier": "App",
-          "Common.TypeNamespace": "Aseguradora.UI",
-          "Runtime.Name": "Components.IComponent"
-        }
-      },
-      {
-        "HashCode": -1821373559,
-        "Kind": "Components.Component",
-        "Name": "Aseguradora.UI.App",
-        "AssemblyName": "Aseguradora.UI",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Aseguradora.UI.App"
-          }
-        ],
-        "Metadata": {
-          "Common.TypeName": "Aseguradora.UI.App",
-          "Common.TypeNameIdentifier": "App",
-          "Common.TypeNamespace": "Aseguradora.UI",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch",
-          "Runtime.Name": "Components.IComponent"
         }
       },
       {
@@ -19747,11 +19584,6 @@
       "FileKind": "component"
     },
     {
-      "FilePath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Pages/FetchData.razor",
-      "TargetPath": "Pages\\FetchData.razor",
-      "FileKind": "component"
-    },
-    {
       "FilePath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Shared/DialogoError.razor",
       "TargetPath": "Shared\\DialogoError.razor",
       "FileKind": "component"
@@ -19769,11 +19601,6 @@
     {
       "FilePath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Pages/ModificarVehiculo.razor",
       "TargetPath": "Pages\\ModificarVehiculo.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Pages/Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
       "FileKind": "component"
     },
     {
@@ -19804,6 +19631,11 @@
     {
       "FilePath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Shared/MainLayout.razor",
       "TargetPath": "Shared\\MainLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Pages/TtitularesConVehiculos.razor",
+      "TargetPath": "Pages\\TtitularesConVehiculos.razor",
       "FileKind": "component"
     },
     {

@@ -1,17 +1,17 @@
 namespace Aseguradora.Aplicacion.UseCases;
 using Aseguradora.Aplicacion.Interfaces;
 using Aseguradora.Aplicacion.Entidades;
-public class EsTitularUnicoUseCase
+public class TitularesConVehiculosUseCase
 {
        private readonly IRepositorioTitular _mirepo;
 
-    public EsTitularUnicoUseCase (IRepositorioTitular mirepo)
+    public TitularesConVehiculosUseCase (IRepositorioTitular mirepo)
     {
         this._mirepo = mirepo;
     }
 
-    public Boolean Ejecutar(Titular titular)
+    public List<Titular>? Ejecutar()
     {
-        return _mirepo.EsTitularUnico(titular);
+        return _mirepo.TitularesConVehiculos();
     }
 }

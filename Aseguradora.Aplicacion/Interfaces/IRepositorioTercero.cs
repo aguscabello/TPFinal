@@ -7,4 +7,5 @@ public interface IRepositorioTercero
     void ModificarTercero(Tercero tercero);
     void EliminarTercero(int id);    
     Tercero? ObtenerTercero(int id);
+    Boolean EsTerceroUnico (Tercero tercero);
 }
