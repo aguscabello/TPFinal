@@ -36,9 +36,9 @@ public class RepositorioPoliza : IRepositorioPoliza
                  polizaN.VehiculoId = poliza.VehiculoId;
                  polizaN.ValorAsegurado = poliza.ValorAsegurado;
                  polizaN.Franquicia = poliza.Franquicia;
-                 poliza.Cobertura = poliza.Cobertura;
-                 poliza.FechaInicio = poliza.FechaInicio;
-                 poliza.FechaFin = poliza.FechaFin;
+                 polizaN.Cobertura = poliza.Cobertura;
+                 polizaN.FechaInicio = poliza.FechaInicio;
+                 polizaN.FechaFin = poliza.FechaFin;
 
 
                  context.SaveChanges();
@@ -63,15 +63,15 @@ public class RepositorioPoliza : IRepositorioPoliza
        
     }
 
-    public Boolean EsPolizaUnica(DateTime inicio, DateTime final, int vehiculoId)
+    public Boolean EsPolizaUnica(Poliza poliza)
     {
         using (var context = new AseguradoraContext())
         {
-            List<Poliza> polizas = context.Polizas.Where(p => p.VehiculoId == vehiculoId).ToList();
-            Boolean existeSuperposicion = polizas.Any(poliza =>
-            (inicio >= poliza.FechaInicio && inicio <= poliza.FechaFin) ||
-            (final >= poliza.FechaInicio && final <= poliza.FechaFin) ||
-            (inicio <= poliza.FechaInicio && final >= poliza.FechaFin) );
+            List<Poliza> polizas = context.Polizas.Where(p => p.VehiculoId == poliza.VehiculoId).Where(p => p.Id != poliza.Id).ToList();
+            Boolean existeSuperposicion = polizas.Any(polizaN =>
+            (poliza.FechaInicio >= polizaN.FechaInicio && poliza.FechaInicio <= polizaN.FechaFin) ||
+            (poliza.FechaFin >= polizaN.FechaInicio && poliza.FechaFin <= polizaN.FechaFin) ||
+            (poliza.FechaInicio <= polizaN.FechaInicio && poliza.FechaFin >= polizaN.FechaFin) );
 
             return !existeSuperposicion;
             

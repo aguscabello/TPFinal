@@ -10,8 +10,8 @@ public class EsPolizaUnicaUseCase
         this._repoPoliza = repoPoliza;
     }
 
-    public Boolean Ejecutar(DateTime inicio, DateTime final, int vehiculoId)
+    public Boolean Ejecutar(Poliza poliza)
     {
-        return _repoPoliza.EsPolizaUnica(inicio,final,vehiculoId);
+        return _repoPoliza.EsPolizaUnica( poliza);
     }
 }

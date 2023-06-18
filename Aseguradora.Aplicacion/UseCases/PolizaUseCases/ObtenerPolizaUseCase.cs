@@ -10,7 +10,7 @@ public class ObtenerPolizaUseCase
         this._repoPoliza = repoPoliza;
     }
 
-    Poliza?  Ejecutar(int id)
+    public Poliza?  Ejecutar(int id)
     {
         return _repoPoliza.ObtenerPoliza(id);
     }

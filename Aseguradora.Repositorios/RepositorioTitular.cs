@@ -31,11 +31,14 @@ public class RepositorioTitular : IRepositorioTitular
     {
         using (var context = new AseguradoraContext())
         {
-            var titularN = context.Titulares.Where(t => t.Dni == titular.Dni).SingleOrDefault();
+           
+            var titularN = context.Titulares.Where(t => t.Id == titular.Id).SingleOrDefault();
             if (titularN != null)
             {
+                
                  titularN.Nombre = titular.Nombre;
                  titularN.Apellido = titular.Apellido;
+                 titularN.Dni = titular.Dni;
                  titularN.Correo = titular.Correo;
                  titularN.Direccion= titular.Direccion;
                  titularN.Telefono = titular.Telefono;
@@ -50,9 +53,21 @@ public class RepositorioTitular : IRepositorioTitular
     public Titular? ObtenerTitular(int dni)
     {
         using (var context = new AseguradoraContext())
-        {
-            Console.WriteLine(dni + " Obtener dni");
+        {      
             var t = context.Titulares.Where(t => t.Dni == dni).SingleOrDefault();
+            if (t == null){
+                return null;
+            }
+            return t;
+        }
+       
+    }
+
+        public Titular? EsTitularUnico(Titular titular)
+    {
+        using (var context = new AseguradoraContext())
+        {      
+            var t = context.Titulares.Where(t => t.Dni == titular.Dni).Where(t => t.Id != titular.Id).SingleOrDefault();
             if (t == null){
                 return null;
             }
