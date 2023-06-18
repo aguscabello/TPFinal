@@ -147,7 +147,8 @@ else
     }
     DialogoConfirmacion dialogo = null!;    
     DialogoError dialogoError = null!; 
-     DialogoExito   dialogoExito = null!;
+    DialogoExito   dialogoExito = null!;
+    
     private void ConfirmarEliminacion(Siniestro Siniestro)
     {        
         dialogo.Mensaje = $"¿Desea eliminar el siniestro {Siniestro.FechaIngreso} {Siniestro.Descripcion}?";

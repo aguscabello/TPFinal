@@ -1,0 +1,196 @@
+@page "/Terceros"
+@inject NavigationManager Navegador;
+@inject IJSRuntime JsRuntime;
+@inject AgregarTerceroUseCase AgregarTerceroUseCase
+@inject ListarTercerosUseCase ListarTercerosUseCase
+@inject EliminarTerceroUseCase EliminarTerceroUseCase
+@inject ObtenerTerceroUseCase ObtenerTerceroUseCase
+@inject ListarSiniestrosUseCase ListarSiniestrosUseCase
+
+ 
+@using Aseguradora.UI.Shared;  @*PREGUNTAR PORQUE ME TIRA EL DIALOGO WARNING*@
+<PageTitle>Terceros</PageTitle>
+<DialogoError @ref=dialogoError />
+<DialogoExito @ref=dialogoExito/>
+
+
+<h2> Terceros </h2>
+<div style="margin: 25px; margin-left: 0;">
+    <span>Agregar Tercero</span>
+    <table class="table">
+         <thead>
+            <tr>               
+                <th >Nombre</th>
+                <th >Apellido</th >
+                <th >Dni</th>
+                <th >Telefono</th>
+                <th >NombreAseguradora</th>
+                <th >Siniestro Id</th >         
+                <th >Accion</th >              
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+    
+                <td style="max-width: 120px"><input type="text"      placeholder="Nombre"       @bind="t.Nombre" style="max-width: 100%;" /></td>
+                <td style="max-width: 120px"><input type="text"      placeholder="Apellido"       @bind="t.Apellido" style="max-width: 100%;" /></td>
+                <td style="max-width: 120px"><input type="number"      placeholder="Dni"        @bind="t.Dni" style="max-width: 100%;" />    </td>
+                <td style="max-width: 120px"><input type="number"      placeholder="Telefono"        @bind="t.Telefono" style="max-width: 100%;" />    </td>
+                <td style="max-width: 120px"><input type="text"      placeholder="Nombre Aseguradora"        @bind="t.NombreAseguradora" style="max-width: 100%;" />    </td>
+                <td style="max-width: 120px">
+                    <select  @bind="t.SiniestroId" style="max-width: 100%;">
+                        @foreach (var opcion in opciones)
+                        {
+                            <option value="@opcion">@opcion</option>
+                        }
+                    </select>
+                </td>
+                <td style="max-width: 120px"><button @onclick="Agregar">Agregar</button>    </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+
+    @if (terceros == null)
+    {
+        <p><em>Cargando terceros...</em></p>
+    }
+    else
+    {
+        <span>Listado de Terceros</span>
+        <DialogoConfirmacion @ref=dialogoConfirmacion />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Dni</th>
+                    <th>Telefono</th>
+                    <th>NombreAseguradora</th>
+                    <th>SiniestroId</th>
+                    <th>Accion</th>              
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var t in terceros)
+                {
+                <tr>
+                    <td>@t.Id</td>
+                    <td>@t.Nombre</td>
+                    <td>@t.Apellido</td>
+                    <td>@t.Dni</td>
+                    <td>@t.Telefono</td>       
+                    <td>@t.NombreAseguradora</td>   
+                    <td>@t.SiniestroId</td>   
+                    <td>
+                        <button class="btn btn-primary" @onclick="()=>ModificarTercero(t)">
+                            <span class="oi oi-pencil"></span>
+                        </button>
+                        <button class="btn btn-danger" @onclick="()=>ConfirmarEliminacion(t)" >
+                            <span class="oi oi-trash"></span>
+                        </button>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code 
+{
+
+    List<Tercero>? terceros = new List<Tercero>();
+    List<int> opciones = new List<int>();
+    protected override void OnInitialized()
+    {
+
+        terceros = ListarTercerosUseCase.Ejecutar();
+       
+        List<Siniestro> siniestros = ListarSiniestrosUseCase.Ejecutar();
+           
+        foreach(var s in siniestros)
+        {
+            opciones.Add(s.Id);
+        }
+        
+    }
+
+    Tercero t = new Tercero();
+
+    void Agregar()
+    {
+        if (t.Nombre != null && t.Apellido != null && t.Dni != 0 && t.Telefono != 0 && t.NombreAseguradora != null && t.SiniestroId != 0)
+           {            
+             if (t.Dni != 0){
+                var a = ObtenerTerceroUseCase.Ejecutar(t.Dni);                
+                if (a == null)                
+                {            
+                    
+                    AgregarTerceroUseCase.Ejecutar(t); 
+                    Exito();                    
+                }else{
+                    ElDniYaExiste();
+                }
+            }   
+        }else
+            {
+                DebeCompletarTodosLosDatos();
+            }
+                
+    }
+
+    void ModificarTercero(Tercero t)
+    {
+        Console.WriteLine("Entra");
+        Navegador.NavigateTo($"Tercero/{t.Dni}");
+    }
+
+    DialogoConfirmacion dialogoConfirmacion = null!;    
+    DialogoError   dialogoError = null!;
+    DialogoExito   dialogoExito = null!;
+
+    private void ConfirmarEliminacion(Tercero tercero)
+    {        
+        dialogoConfirmacion.Mensaje = $"¿Desea eliminar al tercero {tercero.Nombre} {tercero.Apellido}?";
+        dialogoConfirmacion.OnConfirmado = EventCallback.Factory.Create(this, () => Eliminar(tercero)); 
+        dialogoConfirmacion.Mostrar();
+    }
+
+    private void Eliminar(Tercero t)
+    {
+
+        EliminarTerceroUseCase.Ejecutar(t.Id);
+        terceros = ListarTercerosUseCase.Ejecutar(); //se actualiza la lista de clientes
+
+    }
+
+    private void DebeCompletarTodosLosDatos()
+    {
+        dialogoError.Mensaje = $"Debe completar todos los campos";        
+        dialogoError.Mostrar();
+    }
+
+    private void ElDniYaExiste()
+    {
+        dialogoError.Mensaje = $"El DNI ya se encuentra registrado";        
+        dialogoError.Mostrar();
+    }
+
+    private void Exito()
+    {
+        dialogoExito.Mensaje = $"El tercero se ha registrado correctamente";   
+        dialogoExito.OnConfirmado = EventCallback.Factory.Create(this, () => Actualizar());      
+        dialogoExito.Mostrar();
+    }
+
+    private void Actualizar()
+    {
+        Navegador.NavigateTo("terceros",true);
+        terceros = ListarTercerosUseCase.Ejecutar();
+    }
+}

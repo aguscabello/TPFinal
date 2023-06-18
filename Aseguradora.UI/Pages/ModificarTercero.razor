@@ -1,0 +1,77 @@
+@page "/Terceros/{Dni:int?}"
+@inject ObtenerTerceroUseCase ObtenerTerceroUseCase
+@inject ModificarTerceroUseCase ModificarTerceroUseCase
+@inject NavigationManager Navegador
+
+
+
+<DialogoError @ref=dialogoError/>
+
+<div style="margin: 25px; margin-left: 0;">
+    <span>Modificar Tercero</span>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Nombre</th>
+                <th> Apellido</th>  
+                <th>Telefono</th>  
+                <th>Nombre Aseguradora</th>  
+                <th>Accion</th>              
+            </tr>
+        </thead>
+           <tbody>
+        
+            <tr>
+                <td><input type="text"      placeholder="Nombre"       @bind="t.Nombre"  /></td>
+                <td><input type="text"      placeholder="Apellido"       @bind="t.Apellido"  /></td>   
+                <td><input type="number"      placeholder="Telefono"       @bind="t.Telefono"  /></td> 
+                <td><input type="text"      placeholder="Nombre Aseguradora"       @bind="t.NombreAseguradora"  /></td> 
+                <td><button @onclick="Modificar">Modificar</button> </td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+@code 
+{
+    Tercero t = new Tercero();
+    [Parameter]  public int? Id { get; set; }
+ 
+
+    DialogoError   dialogoError = null!;
+    protected override void OnParametersSet()
+    {
+        if (Id != null)
+        {
+           
+            var TerceroHallado = ObtenerTerceroUseCase.Ejecutar(Id.Value);
+            if (TerceroHallado != null)
+            {
+                t = TerceroHallado;
+            }
+        }
+    }
+
+    void Modificar()
+    {
+        if (t.Nombre != null && t.Apellido != null && t.Dni != 0 && t.Telefono != 0 && t.NombreAseguradora != null )
+        {
+            ModificarTerceroUseCase.Ejecutar(t);
+            Navegador.NavigateTo("Terceros");
+        } else
+        {
+            DebeCompletarTodosLosDatos();
+        }
+        
+    }
+
+    
+    private void DebeCompletarTodosLosDatos()
+    {
+        dialogoError.Mensaje = $"Debe completar todos los campos";        
+        dialogoError.Mostrar();
+    }
+
+
+}

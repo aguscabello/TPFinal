@@ -57,6 +57,14 @@ builder.Services.AddTransient<ObtenerSiniestroUseCase>();
 builder.Services.AddTransient<VerificarCoberturaUseCase>();
 builder.Services.AddScoped<IRepositorioSiniestro, RepositorioSiniestro>();
 
+//TERCEROS
+builder.Services.AddTransient<AgregarTerceroUseCase>();
+builder.Services.AddTransient<ListarTercerosUseCase>();
+builder.Services.AddTransient<EliminarTerceroUseCase>();
+builder.Services.AddTransient<ModificarTerceroUseCase>();
+builder.Services.AddTransient<ObtenerTerceroUseCase>();
+builder.Services.AddScoped<IRepositorioTercero, RepositorioTercero>();
+
 
 
 var app = builder.Build();
