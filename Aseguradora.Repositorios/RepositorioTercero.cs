@@ -33,7 +33,7 @@ public class RepositorioTercero : IRepositorioTercero
     {
         using (var context = new AseguradoraContext())
         {
-            var terceroN = context.Terceros.Where(t => t.Dni == tercero.Dni).SingleOrDefault();
+            var terceroN = context.Terceros.Where(t => t.Id == tercero.Id).SingleOrDefault();
             if (terceroN != null)
             {
                  terceroN.Nombre = tercero.Nombre;
@@ -49,11 +49,11 @@ public class RepositorioTercero : IRepositorioTercero
     }
 
     
-    public Tercero? ObtenerTercero(int dni)
+    public Tercero? ObtenerTercero(int id)
     {
         using (var context = new AseguradoraContext())
         {
-            var t = context.Terceros.Where(t => t.Dni== dni).SingleOrDefault();
+            var t = context.Terceros.Where(t => t.Id== id).SingleOrDefault();
             if (t == null){
                 return null;
             }

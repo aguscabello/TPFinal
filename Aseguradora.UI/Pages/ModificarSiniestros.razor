@@ -1,6 +1,7 @@
 @page "/Siniestro/{Id:int?}"
 @inject ObtenerSiniestroUseCase ObtenerSiniestroUseCase
 @inject ModificarSiniestroUseCase ModificarSiniestroUseCase
+@inject VerificarCoberturaUseCase VerificarCoberturaUseCase
 @inject NavigationManager Navegador
 
 <DialogoError @ref=dialogoError/>
@@ -59,8 +60,14 @@
     {
         if (!s.FechaIngreso.Equals(inicial) && !s.FechaOcurrencia.Equals(inicial) && s.Direccion != " " && s.Descripcion != " " )
         {           
-            ModificarSiniestroUseCase.Ejecutar(s);
-            Navegador.NavigateTo("Siniestros");
+            if(VerificarCoberturaUseCase.Ejecutar(s.FechaOcurrencia,s.PolizaId))
+            {
+                ModificarSiniestroUseCase.Ejecutar(s);
+                Navegador.NavigateTo("Siniestros");
+            }
+            else{
+                SeguroNoVigente();
+            }
         } else
         {
             DebeCompletarTodosLosDatos();
@@ -73,6 +80,13 @@
         dialogoError.Mensaje = $"Debe completar todos los campos";        
         dialogoError.Mostrar();
     }
+
+    private void SeguroNoVigente()
+    {
+        dialogoError.Mensaje = $"El seguro no está vigente";        
+        dialogoError.Mostrar();
+    }
+
 
 
 }

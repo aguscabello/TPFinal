@@ -1,4 +1,4 @@
-@page "/Terceros/{Dni:int?}"
+@page "/Tercero/{Id:int?}"
 @inject ObtenerTerceroUseCase ObtenerTerceroUseCase
 @inject ModificarTerceroUseCase ModificarTerceroUseCase
 @inject NavigationManager Navegador
@@ -46,8 +46,10 @@
         {
            
             var TerceroHallado = ObtenerTerceroUseCase.Ejecutar(Id.Value);
+            
             if (TerceroHallado != null)
             {
+                Console.WriteLine(TerceroHallado.Nombre);
                 t = TerceroHallado;
             }
         }
@@ -55,7 +57,7 @@
 
     void Modificar()
     {
-        if (t.Nombre != null && t.Apellido != null && t.Dni != 0 && t.Telefono != 0 && t.NombreAseguradora != null )
+        if (t.Nombre != "" && t.Apellido != "" && t.Dni != 0 && t.Telefono != 0 && t.NombreAseguradora != "" )
         {
             ModificarTerceroUseCase.Ejecutar(t);
             Navegador.NavigateTo("Terceros");

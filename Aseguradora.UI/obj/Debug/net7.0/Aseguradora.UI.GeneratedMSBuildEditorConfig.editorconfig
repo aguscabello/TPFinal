@@ -32,17 +32,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
-[C:/Users/cabel/TPFinal/Aseguradora.UI/Pages/ModificarSiniestros.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kaWZpY2FyU2luaWVzdHJvcy5yYXpvcg==
-=======
-[/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Pages/ModificarPoliza.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTW9kaWZpY2FyUG9saXphLnJhem9y
+[C:/Users/cabel/TPFinal/Aseguradora.UI/Pages/ModificarPoliza.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kaWZpY2FyUG9saXphLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/mark/Escritorio/code/TPFinal/Aseguradora.UI/Pages/ModificarTitular.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTW9kaWZpY2FyVGl0dWxhci5yYXpvcg==
->>>>>>> 0769fae4ac0deb8994ceee7a647602c3bc9727ba
+[C:/Users/cabel/TPFinal/Aseguradora.UI/Pages/ModificarSiniestros.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kaWZpY2FyU2luaWVzdHJvcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/cabel/TPFinal/Aseguradora.UI/Pages/ModificarTercero.razor]
